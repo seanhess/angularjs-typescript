@@ -1,0 +1,6 @@
+# do not restart nodemon if:
+
+/public/*
+/components/*
+*.json
+*.md
