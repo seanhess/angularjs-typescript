@@ -13,5 +13,7 @@ Tech used
 * AngularJS
 * CoffeeScript
 * jQuery
+* Node
+* Bower
 
 
