@@ -17,7 +17,7 @@ require.config
     #fjs: 'fjs/fjs.min'
 
 # Bootstrap angularjs using requirejs. 
-define [], (require) ->
+define (require) ->
   angular = require 'angular'
   ngResource = require 'ngResource'
 
