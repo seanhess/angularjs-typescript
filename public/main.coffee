@@ -41,4 +41,6 @@ define (require) ->
   #app.value('version', '0.1')
   #app.factory('Items', ItemsService)
 
+  angular.bootstrap document, ['app']
+
   return app
