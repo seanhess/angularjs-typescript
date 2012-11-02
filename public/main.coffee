@@ -42,5 +42,3 @@ define (require) ->
   #app.factory('Items', ItemsService)
 
   angular.bootstrap document, ['app']
-
-  return app
