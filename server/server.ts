@@ -12,10 +12,10 @@ var browserify = require('browserify-middleware')
 export var app = express()
 
 app.use(connect.static(__dirname + '/../public'))
-app.use(connect.cookieParser())
-app.use(connect.multipart())
+// app.use(connect.cookieParser())
+// app.use(connect.multipart())
 app.use(connect.bodyParser())
-app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
+// app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
 
 app.configure("production", () => {
   console.log("PRODUCTION")
@@ -43,7 +43,7 @@ app.get('/info', function(req, res) {
 // Send the Angular app for everything under /admin
 // Be careful not to accidentally send it for 404 javascript files, or data routes
 app.get(/\/[\w\/\-]*$/, function(req, res) {
-  res.sendfile(path.join(__dirname, '..', 'public', 'app', 'index.html'))
+  res.sendfile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
 if (module == (<any>require).main) {

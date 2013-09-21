@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Detmer</title>
+  <title>AngularJS Bootstrap</title>
 
   <!-- APPLICATION STYLES (includes bootstrap) -->
-  <link rel="stylesheet" href="/css/style.css"/>  
+  <link rel="stylesheet" href="/css/main.css"/>  
 
 </head>
 <body>
+    <div ng-include="'/app/partials/header.html'"></div>
     <div ng-view class="main">Loading...</div>
+    <div ng-include="'/app/partials/footer.html'"></div>    
 
     <!-- Uncomment for offline -->    
     <script src="/lib/underscore/underscore-min.js"></script>

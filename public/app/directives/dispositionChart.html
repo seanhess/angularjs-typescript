@@ -1,0 +1,7 @@
+<div class="disposition-chart-template">
+    <div
+        ng-repeat="disposition in dispositions | orderBy:'created' | limitTo:30" 
+        class="disposition disposition_{{disposition.value}}"
+        >
+    </div>
+</div>

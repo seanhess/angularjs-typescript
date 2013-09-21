@@ -5906,6 +5906,9 @@ td.visible-print {
     display: none !important;
   }
 }
+div.example {
+  color: blue;
+}
 body {
   font-family: 'Open Sans', 'Helvetica', sans-serif;
 }

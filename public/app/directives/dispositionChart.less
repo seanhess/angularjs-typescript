@@ -1,0 +1,39 @@
+.disposition-chart-template {
+
+    .disposition {
+        width: 8px;
+        height: 15px;
+        display: inline-block;
+        margin: 1px;
+        position: relative;
+    }
+
+    @MAX_BAR_HEIGHT: 20px;
+
+    .disposition_1 {
+        height: (@MAX_BAR_HEIGHT);
+        top: (@MAX_BAR_HEIGHT/1) + 1;
+    }
+
+    .disposition_2 {
+        height: (@MAX_BAR_HEIGHT/2);
+        top: (@MAX_BAR_HEIGHT/2) + 1;
+    }
+
+    .disposition_3 {
+        height: (@MAX_BAR_HEIGHT/3);
+        top: (@MAX_BAR_HEIGHT/3);
+    }
+
+    .disposition_4 {
+        height: (@MAX_BAR_HEIGHT/3);
+    }
+
+    .disposition_5 {
+        height: (@MAX_BAR_HEIGHT/2);
+    }
+
+    .disposition_6 {
+        height: (@MAX_BAR_HEIGHT/1);
+    }
+}

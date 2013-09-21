@@ -1,0 +1,9 @@
+<div class="component-disposition-selector">
+    <a  href="#" 
+        ng-repeat="disposition in dispositions"
+        class="disposition disposition_{{disposition.value}}"
+        ng-click="select(disposition, $event)" 
+        tooltip-trigger="mouseenter" 
+        tooltip="{{disposition.name}}">
+    </a>
+</div>
