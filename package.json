@@ -13,7 +13,8 @@
     "q": "~0.9.7",
     "underscore": "~1.5.2",
     "browserify-middleware": "~1.17.2",
-    "less": "~1.4.2"
+    "less": "~1.4.2",
+    "connect": "~2.9.0"
   },
   "readmeFilename": "README.md",
   "devDependencies": {},

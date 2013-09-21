@@ -2,3 +2,5 @@
 node_modules
 components
 public/lib
+*.js
+*.css

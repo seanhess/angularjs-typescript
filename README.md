@@ -4,7 +4,6 @@ AngularJS Bootstrap Project
 Client
 ------
 * [Typescript](http://www.typescriptlang.org/). Strict typing for Javascript
-* [TSD](https://github.com/Diullei/tsd). Typescript Package Manager
 * [AngularJS](http://angularjs.org/). Web application framework
 * [jQuery](http://jquery.com/)
 * [Bower](https://github.com/bower/bower). Web package manager
@@ -12,3 +11,13 @@ Client
 * [Bootstrap](http://getbootstrap.com/). Css Framework
 
 
+Tasks
+-----
+
+Install Dependencies and be ready to rock
+
+    make install
+
+Build the project (Typescript, less, etc)
+
+    make

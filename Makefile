@@ -1,25 +1,25 @@
 all: build
 
 build:
-	tsc server/server.ts public/app/app.ts
-	lessc public/css/style.less public/css/style.css
+	tsc server/server.ts public/app/app.ts -m commonjs
+	lessc public/css/main.less public/css/main.css
 
 test: build
-	cd server && bin/test test/*.test.js
+	# cd server && bin/test test/*.test.js
+	echo "Add some tests lazy"
   
 install:
-	npm install
+	git submodule update --init
+	npm install --s
 	bower install
-	# bower components will get synched with rsync
-
+	
 upload:
 	# sync all the files
-	rsync -rav -e ssh --delete --exclude-from config/exclude.txt . root@detmer.orbit.al:~/detmer
+	# rsync -rav -e ssh --delete --exclude-from config/exclude.txt . root@detmer.orbit.al:~/detmer
+	echo "Upload"
 
 deploy: upload
 	# run the remote commands
-	ssh -t root@detmer.orbit.al "cd ~/detmer && bash config/deploy.sh"
+	# ssh -t root@SERVER "cd ~/detmer && bash config/deploy.sh"
 
-
-# oh, cool, if a directory exists, it doesn't rebuild it
 .PHONY: test test-w

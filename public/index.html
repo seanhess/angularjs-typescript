@@ -1,14 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>AngularJS</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <script data-main="main" src="components/requirejs/require.js"></script>
-    <script src="config.js"></script>
-    </script>
+  <meta charset="utf-8">
+  <title>Detmer</title>
+
+  <!-- APPLICATION STYLES (includes bootstrap) -->
+  <link rel="stylesheet" href="/css/style.css"/>  
+
 </head>
 <body>
-  <div ng-view>Loading...</div>
+    <div ng-view class="main">Loading...</div>
+
+    <!-- Uncomment for offline -->    
+    <script src="/lib/underscore/underscore-min.js"></script>
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-resource/angular-resource.min.js"></script>
+    
+    <!-- Application Code -->
+    <!-- main.js is compiled. (By node during development) -->
+    <script src="/main.js"></script>
+
 </body>
 </html>
