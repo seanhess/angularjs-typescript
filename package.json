@@ -1,20 +1,23 @@
 {
-  "name": "http",
+  "name": "angularjs-bootstrap",
   "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
   "main": "app.coffee",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanhess/angularjs-bootstrap"
   },
-  "repository": "",
-  "author": "",
-  "license": "BSD",
+  "author": "Sean Hess",
+  "license": "MIT",
   "dependencies": {
-    "express": "~3.0.0rc5",
-    "request": "~2.11.4",
-    "coffee-script": "~1.3.3",
-    "coffeepot": "0.0.0",
-    "stylus": "~0.30.1",
-    "nib": "~0.8.2"
+    "express": "~3.0.6",
+    "q": "~0.9.7",
+    "underscore": "~1.5.2",
+    "browserify-middleware": "~1.17.2",
+    "less": "~1.4.2"
+  },
+  "readmeFilename": "README.md",
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/seanhess/angularjs-bootstrap/issues"
   }
 }
