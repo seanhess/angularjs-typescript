@@ -1,9 +1,9 @@
 all: build
 
 build:
-	lessc public/css/main.less public/css/main.css
-	tsc server/server.ts public/app/app.ts -m commonjs
-	
+	node_modules/.bin/lessc public/css/main.less public/css/main.css
+	node_modules/.bin/tsc server/server.ts public/app/app.ts -m commonjs
+
 
 test: build
 	# cd server && bin/test test/*.test.js
@@ -12,7 +12,7 @@ test: build
 install:
 	git submodule update --init
 	npm install --s
-	bower install
+	node_modules/.bin/bower install
 	
 upload:
 	# sync all the files

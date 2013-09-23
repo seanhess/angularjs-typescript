@@ -1,7 +1,7 @@
 {
   "name": "angularjs-bootstrap",
   "version": "0.0.0",
-  "main": "app.coffee",
+  "main": "server/server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/seanhess/angularjs-bootstrap"
@@ -14,7 +14,9 @@
     "underscore": "~1.5.2",
     "browserify-middleware": "~1.17.2",
     "less": "~1.4.2",
-    "connect": "~2.9.0"
+    "connect": "~2.9.0",
+    "typescript": "~0.9.1-1",
+    "bower": "~1.2.6"
   },
   "readmeFilename": "README.md",
   "devDependencies": {},
