@@ -4,8 +4,18 @@
         {
             "follow_symlinks": true,
             "path": ".",
-            "file_exclude_patterns": ["*.css", "*.js", ".vimrc", "*.js.map"],
-            "folder_exclude_patterns": [".git", "DefinitelyTyped", "public/lib/*"]
+            "file_exclude_patterns": [
+                // "*.css", 
+                // "server/*.js", 
+                // "public/*.js", 
+                // "public/**/*.js", 
+                ".vimrc", 
+                "*.js.map"
+            ],
+            
+            "folder_exclude_patterns": [
+                ".git"
+            ]
         }
     ],
 

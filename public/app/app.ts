@@ -1,21 +1,28 @@
-/// <reference path="d.ts/angular.d.ts"/>
-/// <reference path="d.ts/underscore/underscore.d.ts"/>
+/// <reference path="./all.d.ts"/>
+
+// TODO: grunt-browserify needs to support the "require" configuraiton option, then we can name these "jquery" and "angular" and use import
+var $:JQueryStatic = require("jquery-browserify")  
+var angular:ng.IAngularStatic = require("angular-browserify")
+
+// it thinks it is node!
+import _ = require("underscore")  
 
 import ExampleControl = require('views/example_control')
-import SomeService = require('services/SomeService')
+import MessageService = require('services/MessageService')  
 
 // import Disposition = require('services/Disposition')
 // import formcontrol = require('directives/formcontrol')
 // import dispositionSelector = require('directives/dispositionSelector')
 // import dispositionChart = module('directives/dispositionChart')
 // import popup = module('directives/popup')
-
 // import toKey = module('filters/toKey')
 
-console.log("Loaded: Angular Bootstrap")
-angular.module('app', ['ngResource'])
+console.log("Loaded: Underscore", !!_)
+console.log("Loaded: JQuery", !!$) 
+console.log("Loaded: Angular", !!angular)
 
-.factory("SomeService", SomeService)
+angular.module('app', [])
+.factory("MessageService", MessageService.service)
 
 // .directive("formcontrol", formcontrol.main)
 // .filter("toKey", toKey.main)

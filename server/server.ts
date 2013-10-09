@@ -1,20 +1,18 @@
-///<reference path='d.ts/express/express.d.ts' />
-///<reference path='d.ts/node/node.d.ts' />
+/// <reference path='./all.d.ts' />
 
 var PORT = process.env.PORT || 3000
 import express = require('express')
 import http = require('http')
 var connect = require('connect')
-var path = require('path')
+var path = require('path') 
+import types = require('types')
 
-var browserify = require('browserify-middleware')
-
-export var app = express()
+export var app = express() 
 
 app.use(connect.static(__dirname + '/../public'))
 // app.use(connect.cookieParser())
 // app.use(connect.multipart())
-app.use(connect.bodyParser())
+app.use(connect.bodyParser()) 
 // app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
 
 app.configure("production", () => {
@@ -27,14 +25,21 @@ app.configure("development", () => {
 
 app.configure("test", () => {
   console.log("TEST")
+}) 
+
+/// EXAMPLE API CALL //////////////////////////////
+
+app.get('/messages', function(req, res) {
+    var messages:types.IMessage[] = [
+        {name:"Henry", body:"This is a message"},
+        {name:"Bobby", body:"Hi there Henry"},
+        {name:"Wahoo", body:"Hi there Henry"},
+
+    ]
+    res.send(messages)
 })
 
-
 /// APP ///////////////////////////////////////////
-
-app.get('/main.js', browserify('../public/app/app.js', {
-    minify: false,
-}))
 
 app.get('/info', function(req, res) {
     res.send("AngularJS Bootstrap")

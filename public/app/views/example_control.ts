@@ -1,11 +1,16 @@
-/// <reference path="../d.ts/angular.d.ts"/>
 
-function ExampleControl($scope:any, $location:ng.ILocationService, SomeService) {
+function ExampleControl($scope:any, $location:ng.ILocationService, MessageService) {
     load()
 
     function load() {
-        $scope.stuff = SomeService.query()        
-        $scope.fakePeople = [{name: "bob"}, {name: "will"}]
+        MessageService.query().then(function(messages) {
+            $scope.messages = messages
+        })
+        $scope.fakePeople = [
+            {name: "test"}, 
+            {name: "asdf"},
+            {name: "Catherine"}
+        ]
     }
 
     $scope.details = function(thing) {

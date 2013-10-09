@@ -2,26 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AngularJS Bootstrap</title>
+  <title>My Application!</title>
 
   <!-- APPLICATION STYLES (includes bootstrap) -->
   <link rel="stylesheet" href="/css/main.css"/>  
+  <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 
 </head>
 <body>
-    <div ng-include="'/app/partials/header.html'"></div>
-    <div ng-view class="main">Loading...</div>
-    <div ng-include="'/app/partials/footer.html'"></div>    
 
-    <!-- Uncomment for offline -->    
-    <script src="/lib/underscore/underscore-min.js"></script>
-    <script src="/lib/jquery/jquery.min.js"></script>
-    <script src="/lib/angular/angular.min.js"></script>
-    <script src="/lib/angular-resource/angular-resource.min.js"></script>
+    <!-- Main View -->
+    <div ng-view class="main">Loading...</div>
     
-    <!-- Application Code -->
-    <!-- main.js is compiled. (By node during development) -->
-    <script src="/main.js"></script>
+    <!-- Application Code: compiled by grunt/browserify/typescript -->
+    <script src="/index.js"></script>
 
 </body>
 </html>

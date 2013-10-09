@@ -12,14 +12,25 @@
     "express": "~3.0.6",
     "q": "~0.9.7",
     "underscore": "~1.5.2",
-    "browserify-middleware": "~1.17.2",
     "less": "~1.4.2",
     "connect": "~2.9.0",
-    "typescript": "~0.9.1-1",
-    "bower": "~1.2.6"
+    "jquery-browserify": "~1.8.1",
+    "angular-browserify": "0.0.1"
   },
   "readmeFilename": "README.md",
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "~0.9.1-1",
+    "grunt": "~0.4.1",
+    "browserify": "~2.33.1",
+    "grunt-browserify": "~1.2.8",
+    "grunt-exec": "~0.4.2",
+    "grunt-typescript": "~0.2.4",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-nodemon": "~0.1.1",
+    "grunt-concurrent": "~0.4.0",
+    "grunt-develop": "~0.2.2"
+  },
   "bugs": {
     "url": "https://github.com/seanhess/angularjs-bootstrap/issues"
   }

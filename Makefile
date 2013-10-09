@@ -12,7 +12,6 @@ test: build
 install:
 	git submodule update --init
 	npm install --s
-	node_modules/.bin/bower install
 	
 upload:
 	# sync all the files
