@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 components
+bower_components
 public/lib
 *.js
+*.js.map
 *.css

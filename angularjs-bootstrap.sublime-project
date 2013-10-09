@@ -14,7 +14,9 @@
             ],
             
             "folder_exclude_patterns": [
-                ".git"
+                ".git",
+                "bower_components",
+                "node_modules",
             ]
         }
     ],

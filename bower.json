@@ -1,0 +1,19 @@
+{
+  "name": "angularjs-bootstrap",
+  "version": "0.1.0",
+  "homepage": "https://github.com/seanhess/angularjs-bootstrap",
+  "authors": [
+    "Sean Clark Hess <seanhess@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}

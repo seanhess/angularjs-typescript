@@ -49,6 +49,8 @@ This will already recompile the app, the less files, and the server separately, 
 Todo
 ----
 
+- Debowerify slowed it down a lot: http://benclinkinbeard.com/blog/2013/08/external-bundles-for-faster-browserify-builds/ - Or come up with some other way to do bootstrap
+
 ### Easy way to install dependencies. You don't need a config file, you already have one. You already have to search NPM for packages. It would be nice if you could KNOW which ones map to which definitely typed repositories. 
 
 - API and library that return the correct definitely typed file for a given node module. It can do some simple name matching, or all of them. 

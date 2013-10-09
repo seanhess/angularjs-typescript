@@ -9,12 +9,12 @@ function ExampleControl($scope:any, $location:ng.ILocationService, MessageServic
         $scope.fakePeople = [
             {name: "test"}, 
             {name: "asdf"},
-            {name: "Catherine"}
+            {name: "Catherine is hot"}
         ]
     }
 
     $scope.details = function(thing) {
-        $location.path("/stuff/" + thing.id)
+        $location.path("/stuff/" + thing.id) 
     }
 }
 

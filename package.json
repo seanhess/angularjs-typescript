@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/seanhess/angularjs-bootstrap"
   },
+  "scripts": {},
   "author": "Sean Hess",
   "license": "MIT",
   "dependencies": {
@@ -29,7 +30,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-nodemon": "~0.1.1",
     "grunt-concurrent": "~0.4.0",
-    "grunt-develop": "~0.2.2"
+    "grunt-develop": "~0.2.2",
+    "bower": "~1.2.7"
   },
   "bugs": {
     "url": "https://github.com/seanhess/angularjs-bootstrap/issues"
