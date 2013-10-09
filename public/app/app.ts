@@ -3,7 +3,7 @@
 // TODO: grunt-browserify needs to support the "require" configuraiton option, then we can name these "jquery" and "angular" and use import
 var $:JQueryStatic = require("jquery-browserify")  
 var angular:ng.IAngularStatic = require("angular-browserify")
-// require("bootstrap") 
+require("bootstrap")
 
 // it thinks it is node!
 import _ = require("underscore")   

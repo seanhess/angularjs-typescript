@@ -1,5 +1,6 @@
 var $ = require("jquery-browserify");
 var angular = require("angular-browserify");
+require("bootstrap");
 
 var _ = require("underscore");
 
