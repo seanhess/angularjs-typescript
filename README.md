@@ -1,6 +1,11 @@
 AngularJS Bootstrap Project
 ===========================
 
+Setup
+-----
+
+    npm install -g grunt-cli
+
 Client
 ------
 * [Typescript](http://www.typescriptlang.org/). Strict typing for Javascript
