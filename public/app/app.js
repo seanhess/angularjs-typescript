@@ -13,6 +13,8 @@ angular.module('app', []).factory("MessageService", MessageService.service).conf
     $routeProvider.otherwise({ redirectTo: '/example' });
 });
 
-angular.bootstrap($(document), ['app']);
+$(function () {
+    angular.bootstrap($(document), ['app']);
+});
 
 //# sourceMappingURL=file:////Users/seanhess/projects/angularjs-bootstrap/public/app/app.js.map

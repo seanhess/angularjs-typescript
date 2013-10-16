@@ -36,4 +36,8 @@ angular.module('app', [])
     $routeProvider.otherwise({redirectTo: '/example'})
 })
 
-angular.bootstrap($(document), ['app'])
+// the problem is to boo
+$(function() {
+    angular.bootstrap($(document), ['app'])    
+})
+

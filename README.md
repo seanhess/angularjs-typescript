@@ -20,7 +20,7 @@ TODO
 ----
 
 - browserify jQuery and Bootstrap together, into common.js or vendor.js
-- compile all templates into a single html file with <script> tags
+- compile all templates into a single html file with <script> tags. Not working. Can't include. Try https://github.com/wmluke/grunt-inline-angular-templates instead. Will slow down development though eh?
 
 Tasks
 -----
