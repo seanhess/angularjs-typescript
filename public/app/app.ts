@@ -1,7 +1,9 @@
 /// <reference path="all.d.ts"/>
 
-// TODO: grunt-browserify needs to support the "require" configuraiton option, then we can name these "jquery" and "angular" and use import
+// JQuery is included globally by hand
 // var $:JQueryStatic = require("jquery")
+
+// Can't depend on the module authors to declare angular as an external module
 var angular:ng.IAngularStatic = require("angular") 
 
 // it thinks it is node!

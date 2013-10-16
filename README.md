@@ -19,9 +19,8 @@ Client
 TODO
 ----
 
-- BUG: cannot find module jquery
 - browserify jQuery and Bootstrap together, into common.js or vendor.js
-- automatically start server on watch... wait, just do watch second
+- compile all templates into a single html file with <script> tags
 
 Tasks
 -----
@@ -31,18 +30,9 @@ Tasks
     npm install
     grunt install
 
-### Build
+### Build, Start the server, Live compile, and Live reload
 
     grunt
-
-### Live compile on save
-
-    grunt watch
-
-    # in another tab
-    nodemon
-
-This will already recompile the app, the less files, and the server separately, if you change any of the respective files. 
 
 ### Live reload on save
 
@@ -72,22 +62,4 @@ Plan:
 The idea is to SHARE code between client and server. It's all just Javascript. So the entire APP depends on them, not separately. 
 
 Disadvantage: there's no way to separate the dependency lists. Would be nice for index generation.
-
-Todo
-----
-
-- Debowerify slowed it down a lot: http://benclinkinbeard.com/blog/2013/08/external-bundles-for-faster-browserify-builds/ - Or come up with some other way to do bootstrap
-
-### Easy way to install dependencies. You don't need a config file, you already have one. You already have to search NPM for packages. It would be nice if you could KNOW which ones map to which definitely typed repositories. 
-
-- API and library that return the correct definitely typed file for a given node module. It can do some simple name matching, or all of them. 
-
-- Grunt Plugin that concatenates all the definition files specified into one big one. 
-
-- Grunt Plugin that reads the packages from package.json, uses the above service to reference them
-
-### WAITING FOR PACKAGE AUTHORS
-
-- Live reload server in grunt. (Blocked by grunt-develop - not working)
-- Get `import` to work for JQuery and angular
 
