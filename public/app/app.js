@@ -1,9 +1,3 @@
-var $ = require("jquery-browserify");
-var angular = require("angular-browserify");
-require("bootstrap");
-
-var _ = require("underscore");
-
 var ExampleControl = require("./views/example_control");
 var MessageService = require("./services/MessageService");
 

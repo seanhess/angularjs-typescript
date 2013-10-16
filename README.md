@@ -46,6 +46,10 @@ This will already recompile the app, the less files, and the server separately, 
 2. Open the web page and your text editor side-by-side
 3. Edit any file, watch grunt recompile and automatically reload the web page when it is done
 
+### Install Definitely Typed dependencies
+
+First install [TPM](http://github.com/seanhess/tpm), then run `tpm install`
+
 Todo
 ----
 
