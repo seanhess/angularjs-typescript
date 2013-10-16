@@ -3,7 +3,11 @@ node_modules
 components
 bower_components
 public/components
+public/bower
+bower
 public/lib
 *.js
 *.js.map
 *.css
+public/app/types
+server/types

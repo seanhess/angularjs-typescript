@@ -14,17 +14,21 @@ Client
 * [Browserify](http://browserify.org/)
 * [Node](http://nodejs.org/). Server Javascript
 * [Bootstrap](http://getbootstrap.com/). Css Framework
-
-Not Used
---------
-
 * [Bower](https://github.com/bower/bower). Use browserify+npm instead.
+
+TODO
+----
+
+- BUG: cannot find module jquery
+- browserify jQuery and Bootstrap together, into common.js or vendor.js
+- automatically start server on watch... wait, just do watch second
 
 Tasks
 -----
 
 ### Install Dependencies
 
+    npm install
     grunt install
 
 ### Build
@@ -48,7 +52,26 @@ This will already recompile the app, the less files, and the server separately, 
 
 ### Install Definitely Typed dependencies
 
-First install [TPM](http://github.com/seanhess/tpm), then run `tpm install`
+They are installed automatically with [TPM](http://github.com/seanhess/tpm). Install with `npm install -g tpm`, then they will be installed to `server/types` and `public/app/types` whenever you run `grunt install`.
+
+If you just installed a new npm module, run 'grunt tpm' to install them. 
+
+### Front end Dependencies
+
+We want to compile all dependencies into one file, and make them available through external to the rest of the program. These do not change nearly as often as the app itself, and it's too slow otherwise. https://github.com/eugeneware/bower-resolve
+
+Types of dependencies:
+- big front-end libraries: jQuery, AngularJS (NPM)
+- big front-end libraries that no one depends on: bootstrap 
+- pure Javascript code: Underscore, base64, uuid generation? (NPM)
+
+Plan: 
+1. Automatically bundle any NPM dependencies with browserify. 
+2. Include any bower dependencies by hand.
+
+The idea is to SHARE code between client and server. It's all just Javascript. So the entire APP depends on them, not separately. 
+
+Disadvantage: there's no way to separate the dependency lists. Would be nice for index generation.
 
 Todo
 ----

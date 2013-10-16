@@ -14,7 +14,11 @@
     <!-- Main View -->
     <div ng-view class="main">Loading...</div>
     
-    <!-- Application Code: compiled by grunt/browserify/typescript -->
+    <!-- bower dependencies are included by hand (try to use NPM). Bootstrap depends on JQuery -->
+    <script src="/bower/jquery/jquery.min.js"></script>
+    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Application Code: compiled by grunt, typescript, and browserify -->
     <script src="/index.js"></script>
 
 </body>

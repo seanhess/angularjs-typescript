@@ -1,7 +1,8 @@
+var angular = require("angular");
+
 var ExampleControl = require("./views/example_control");
 var MessageService = require("./services/MessageService");
 
-console.log("Loaded: Underscore", !!_);
 console.log("Loaded: JQuery", !!$);
 console.log("Loaded: Angular", !!angular);
 

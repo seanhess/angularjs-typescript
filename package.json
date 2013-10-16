@@ -13,14 +13,12 @@
     "express": "~3.0.6",
     "q": "~0.9.7",
     "underscore": "~1.5.2",
-    "less": "~1.4.2",
     "connect": "~2.9.0",
-    "jquery-browserify": "~1.8.1",
-    "angular-browserify": "0.0.1",
-    "grunt-develop": "~0.2.2"
+    "angular-browserify": "0.0.1"
   },
   "readmeFilename": "README.md",
   "devDependencies": {
+    "less": "~1.4.2",
     "typescript": "~0.9.1-1",
     "grunt": "~0.4.1",
     "browserify": "~2.33.1",

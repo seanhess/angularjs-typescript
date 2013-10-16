@@ -1,4 +1,4 @@
-/// <reference path='./all.d.ts' />
+/// <reference path='all.d.ts' />
 
 var PORT = process.env.PORT || 3000
 import express = require('express')
@@ -7,16 +7,16 @@ var connect = require('connect')
 var path = require('path') 
 import types = require('types')
 
-export var app = express() 
+export var app = express()
 
 app.use(connect.static(__dirname + '/../public'))
 // app.use(connect.cookieParser())
 // app.use(connect.multipart())
-app.use(connect.bodyParser()) 
+app.use(connect.bodyParser())
 // app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
 
 app.configure("production", () => {
-  console.log("PRODUCTION")
+  console.log("PRODUCTION") 
 })
 
 app.configure("development", () => {
