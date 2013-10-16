@@ -16,7 +16,8 @@
     "less": "~1.4.2",
     "connect": "~2.9.0",
     "jquery-browserify": "~1.8.1",
-    "angular-browserify": "0.0.1"
+    "angular-browserify": "0.0.1",
+    "grunt-develop": "~0.2.2"
   },
   "readmeFilename": "README.md",
   "devDependencies": {

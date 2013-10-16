@@ -24,7 +24,7 @@ app.configure("development", () => {
 })
 
 app.configure("test", () => {
-  console.log("TEST")
+  console.log("TEST") 
 }) 
 
 /// EXAMPLE API CALL //////////////////////////////
@@ -33,7 +33,7 @@ app.get('/messages', function(req, res) {
     var messages:types.IMessage[] = [
         {name:"Henry", body:"This is a message"},
         {name:"Bobby", body:"Hi there Henry"},
-        {name:"Wahoo", body:"Hi there Henry"},
+        {name:"Wahoo22", body:"Hi there Henry"},
 
     ]
     res.send(messages)

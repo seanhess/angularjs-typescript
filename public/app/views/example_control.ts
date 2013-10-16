@@ -9,7 +9,7 @@ function ExampleControl($scope:any, $location:ng.ILocationService, MessageServic
         $scope.fakePeople = [
             {name: "test"}, 
             {name: "asdf"},
-            {name: "Catherine is hot"}
+            {name: "Catherine is hot, baby"}
         ]
     }
 
