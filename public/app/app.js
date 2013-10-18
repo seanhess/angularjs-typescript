@@ -1,8 +1,9 @@
-var angular = require("angular");
+var _ = require("underscore");
 
 var ExampleControl = require("./views/example_control");
 var MessageService = require("./services/MessageService");
 
+console.log("Loaded: Underscore", !!_);
 console.log("Loaded: JQuery", !!$);
 console.log("Loaded: Angular", !!angular);
 
@@ -17,4 +18,4 @@ $(function () {
     angular.bootstrap($(document), ['app']);
 });
 
-//# sourceMappingURL=file:////Users/seanhess/projects/angularjs-bootstrap/public/app/app.js.map
+//# sourceMappingURL=file:////Users/seanhess/projects/angularjs-typescript/public/app/app.js.map

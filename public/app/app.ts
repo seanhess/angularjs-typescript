@@ -1,13 +1,8 @@
 /// <reference path="all.d.ts"/>
 
-// JQuery is included globally by hand
-// var $:JQueryStatic = require("jquery")
-
-// Can't depend on the module authors to declare angular as an external module
-var angular:ng.IAngularStatic = require("angular") 
-
-// it thinks it is node!
-// import _ = require("underscore")
+// Angular and JQuery are loaded globally
+// Underscore "just works" from NPM
+import _ = require("underscore")
 
 import ExampleControl = require('views/example_control')
 import MessageService = require('services/MessageService')  
@@ -19,7 +14,7 @@ import MessageService = require('services/MessageService')
 // import popup = module('directives/popup')
 // import toKey = module('filters/toKey')
 
-// console.log("Loaded: Underscore", !!_)
+console.log("Loaded: Underscore", !!_)
 console.log("Loaded: JQuery", !!$) 
 console.log("Loaded: Angular", !!angular)
 

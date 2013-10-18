@@ -14,7 +14,6 @@
     "q": "~0.9.7",
     "underscore": "~1.5.2",
     "connect": "~2.9.0",
-    "angular-browserify": "0.0.1",
     "grunt-angular-templates": "~0.4.2"
   },
   "readmeFilename": "README.md",

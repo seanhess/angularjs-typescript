@@ -14,10 +14,11 @@
     <!-- Main View -->
     <div ng-view="" class="main">Loading...</div>
     
-    <!-- bower dependencies are included by hand (try to use NPM). Bootstrap depends on JQuery -->
-    <script src="/bower/jquery/jquery.min.js"></script>
-    <script src="/bower/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <!-- bower dependencies are included by hand -->
+    <!-- Pure JS code is included with NPM instead (like underscore) -->
+    <script src="/bower/jquery/jquery.js"></script>
+    <script src="/bower/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower/angular/angular.js"></script>
 
     <!-- Application Code: compiled by grunt, typescript, and browserify -->
     <script src="/index.js"></script>
