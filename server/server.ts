@@ -5,7 +5,6 @@ import express = require('express')
 import http = require('http')
 var connect = require('connect')
 var path = require('path') 
-import types = require('types')
 import r = require('rethinkdb')
 import rdb = require('./RethinkConnection')
 var expressPromise = require('express-promise')
@@ -50,7 +49,7 @@ app.get('/messages', function(req, res) {
 })
 
 app.post('/messages', function(req, res) {
-    var message:types.IMessage = req.body
+    var message:IMessage = req.body
     res.send(
         run(r.table('messages').insert(message))
         .then(() => 200)

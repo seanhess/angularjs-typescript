@@ -44,7 +44,17 @@ Application Dependencies
 
 Angular works most seamlessly with a global scope, with all application code concatenated or included in multiple script tags. It's module system helps resolve any conflicts, and Typescript takes us rest of the way there. 
 
+PROBLEM: you can't both use `require` and expect to compile everything
 
+PROBLEM: I want to be able to `require` generic javascript code and use it, via NPM. But does that really matter? Like what even? It's MUCH more likely you'll be dealing with Angular services, jQuery plugins, etc. They aren't bootstrapped anyway. 
+
+NEEDS
+[ ] compile everything at once
+[ ] include everything automatically
+[ ] Bootstrapping all in the same file
+
+CONCAT FILES
+only works if the file has no require statements in it
 
 Dependencies
 ------------

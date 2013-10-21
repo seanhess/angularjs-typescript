@@ -1,8 +1,8 @@
 /// <reference path="../all.d.ts" />
+/// <reference path="../services/MessageService.ts" />
 
-import server = require("../../../server/types")
-
-function ExampleControl($scope:any, $location:ng.ILocationService, MessageService) {
+angular.module('app')
+.controller('ExampleControl', function($scope:any, $location:ng.ILocationService, MessageService:IMessageService) {
     load()
 
     function load() {
@@ -22,13 +22,11 @@ function ExampleControl($scope:any, $location:ng.ILocationService, MessageServic
     }
 
     $scope.createNewMessage = function() {
-        var message:server.IMessage = {
+        var message:IMessage = {
             name: "Bob",
             body: "This is a message"
         }
         MessageService.save(message)
         .then(load)
     }
-}
-
-export = ExampleControl
+})
