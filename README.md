@@ -13,11 +13,6 @@ TODO
 ----
 
 - deploy
-
-- use new service from NPM is as easy as installing it
-- use new directive from NPM is as easy as installing it
-- make new service and use it without registering it?
-
 - source maps
 
 DEPLOY
@@ -25,36 +20,12 @@ DEPLOY
 - minify JS
 - concat libraries
 
-TEST
-- are source maps working?
-
-
-The problem is that I'm registering it at a different place. In the main file. That's not the normal way you do it. 
-
-Angular team DID say they would switch to ES6 modules. 
-
-"The Future of AngularJS" - https://docs.google.com/presentation/d/1Gv-dvU-yy6WY7SiNJ9QRo9XayPS6N2jtgWezdRpoI04/edit?pli=1#slide=id.p
-    - new dependency injection based on es6 modules
-    - easier to share modules
-    - future: module "myStuff" {}
-
-
 Application Dependencies
 ------------------------
 
-Angular works most seamlessly with a global scope, with all application code concatenated or included in multiple script tags. It's module system helps resolve any conflicts, and Typescript takes us rest of the way there. 
+Angular works most easily with a global scope, with all application code concatenated or included in multiple script tags. 
 
-PROBLEM: you can't both use `require` and expect to compile everything
-
-PROBLEM: I want to be able to `require` generic javascript code and use it, via NPM. But does that really matter? Like what even? It's MUCH more likely you'll be dealing with Angular services, jQuery plugins, etc. They aren't bootstrapped anyway. 
-
-NEEDS
-[ ] compile everything at once
-[ ] include everything automatically
-[ ] Bootstrapping all in the same file
-
-CONCAT FILES
-only works if the file has no require statements in it
+You can assume that app.ts is included first, then all application code second. You can `require` code from NPM within any file, and it browserify will make it work. 
 
 Dependencies
 ------------
@@ -62,8 +33,6 @@ Dependencies
 Any pure Javascript code is installed with NPM, and loaded into the browser using [Browserify][browserify]. We WANT to share dependencies between the two systems, which is why we have a single package.json file for both client and server. 
 
 Any big front-end libraries are installed with bower and included by hand. We will use fewer of these, they're not designed to be included, and depend on each other. 
-
-
 
 Tasks
 -----

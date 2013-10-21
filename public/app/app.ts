@@ -1,9 +1,10 @@
 /// <reference path="all.d.ts"/>
 
-// Angular and JQuery are loaded globally
+
 // Underscore "just works" from NPM
 import _ = require("underscore")
 
+// Angular and JQuery are loaded by hand from bower
 console.log("Loaded: Underscore", !!_)
 console.log("Loaded: JQuery...", !!$) 
 console.log("Loaded: Angular", !!angular)
