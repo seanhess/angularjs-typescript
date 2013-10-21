@@ -12,13 +12,21 @@ Setup
 TODO
 ----
 
+- rethinkdb example data?
+
 - deploy
-- add rethinkdb and make definition file
+
+- use new service from NPM is as easy as installing it
+- use new directive from NPM is as easy as installing it
+- make new service and use it without registering it?
 
 DEPLOY
 - concatenate templates into one file for deployment
 - minify JS
 - concat libraries
+
+TEST
+- are source maps working?
 
 Dependencies
 ------------

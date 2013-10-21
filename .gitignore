@@ -11,3 +11,4 @@ public/lib
 *.css
 public/app/types
 server/types
+*.subl*

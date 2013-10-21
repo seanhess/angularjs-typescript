@@ -10,6 +10,11 @@ export function service($http: ng.IHttpService, $q:ng.IQService) {
         query: function():ng.IPromise<server.IMessage[]> {
             return $http.get("/messages")
             .then((rs) => rs.data)
+        },
+
+        save: function(message:server.IMessage):ng.IPromise<void> {
+            return $http.post('/messages', message)
+            .then(() => null)
         }
     }
 } 

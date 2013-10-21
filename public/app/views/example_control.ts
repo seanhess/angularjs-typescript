@@ -1,3 +1,6 @@
+/// <reference path="../all.d.ts" />
+
+import server = require("../../../server/types")
 
 function ExampleControl($scope:any, $location:ng.ILocationService, MessageService) {
     load()
@@ -15,6 +18,15 @@ function ExampleControl($scope:any, $location:ng.ILocationService, MessageServic
 
     $scope.details = function(thing) {
         $location.path("/stuff/" + thing.id) 
+    }
+
+    $scope.createNewMessage = function() {
+        var message:server.IMessage = {
+            name: "Bob",
+            body: "This is a message"
+        }
+        MessageService.save(message)
+        .then(load)
     }
 }
 

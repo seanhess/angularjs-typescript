@@ -26,5 +26,11 @@
         // you might need to build one CommonJS and another AMD
         // naw, screw AMD
         "typescript_main":["server/server.ts", "public/app/app.ts"],
+
+        "typescript":
+        [
+            "server/server.ts",
+            "public/app/app.ts",
+        ]
     }       
 }

@@ -6,6 +6,17 @@ import http = require('http')
 var connect = require('connect')
 var path = require('path') 
 import types = require('types')
+import r = require('rethinkdb')
+import rdb = require('./RethinkConnection')
+var expressPromise = require('express-promise')
+
+var db = rdb({
+    host:'localhost',
+    db: 'test',    
+    port: 28015,
+})
+var run = db.run
+var toArray = db.toArray
 
 export var app = express()
 
@@ -15,28 +26,41 @@ app.use(connect.static(__dirname + '/../public'))
 app.use(connect.bodyParser())
 // app.use(connect.session({secret: 'funky monkey', key: 'blah', store:new connect.session.MemoryStore()}))
 
+// You can res.send any promsie. 
+// What does it do on an error?
+app.use(expressPromise())
+
+app.configure(function() {
+    db.connect()
+    .then(() => run(r.db('test').tableCreate('messages')))
+})
+
 app.configure("production", () => {
-  console.log("PRODUCTION") 
+    console.log("PRODUCTION") 
 })
 
 app.configure("development", () => {
-  console.log("DEVELOPMENT")
+    console.log("DEVELOPMENT")
 })
-
-app.configure("test", () => {
-  console.log("TEST") 
-}) 
 
 /// EXAMPLE API CALL //////////////////////////////
 
 app.get('/messages', function(req, res) {
-    var messages:types.IMessage[] = [
-        {name:"Henry", body:"This is a message"},
-        {name:"Bobby", body:"Hi there Henry"},
-        {name:"Wahoo22", body:"Hi there Henry"},
+    res.send(run(r.table('messages')))
+    // var messages:types.IMessage[] = [
+    //     {name:"Henry", body:"This is a message"},
+    //     {name:"Bobby", body:"Hi there Henry"},
+    //     {name:"Wahoo22", body:"Hi there Henry"},
+    // ]
+    // res.send(messages)
+})
 
-    ]
-    res.send(messages)
+app.post('/messages', function(req, res) {
+    var message:types.IMessage = req.body
+    res.send(
+        run(r.table('messages').insert(message))
+        .then(() => 200)
+    )
 })
 
 /// APP ///////////////////////////////////////////
@@ -48,12 +72,12 @@ app.get('/info', function(req, res) {
 // Send the Angular app for everything under /admin
 // Be careful not to accidentally send it for 404 javascript files, or data routes
 app.get(/\/[\w\/\-]*$/, function(req, res) {
-  res.sendfile(path.join(__dirname, '..', 'public', 'index.html'))
+    res.sendfile(path.join(__dirname, '..', 'public', 'index.html'))
 })
 
 if (module == (<any>require).main) {
-  var server = http.createServer(app)
-  server.listen(PORT, () => {
-    console.log("RUNNING " + PORT)
-  })
+    var server = http.createServer(app)
+    server.listen(PORT, () => {
+        console.log("RUNNING " + PORT)
+    })
 }
