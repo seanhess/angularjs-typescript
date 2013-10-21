@@ -55,6 +55,11 @@ If you just installed a new npm module, run 'grunt tpm' to install them.
 
 
 
+Notes
+-----
+
+Easier directives? I could make a better syntax for it. Or I could just rewrite my article. It's not that hard. I think I get it now :) I'm ready. I'm done. Gogogo. 
+
 
 [browserify]: http://browserify.org/
 [TPM]: http://github.com/seanhess/tpm

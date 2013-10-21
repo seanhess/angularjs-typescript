@@ -1,7 +1,0 @@
-# do not restart nodemon if:
-
-/public/*
-/bower_components/*
-/server/types*
-*.json
-*.md
