@@ -16,31 +16,47 @@ Compile everything, start the server, and live reload whenever you change a file
 
     grunt
 
-Features
---------
+Automatic File Watching and LiveReload
+--------------------------------------
 
-Comes complete with [Grunt][grunt] workflows to make everything easier. 
+The default [Grunt][grunt] task builds everything, watches for changes, and starts the server. You just run this command and start making changes. 
 
     grunt
 
-Simplifies [NPM][npm] and [Bower][bower] client-side dependencies. 
+[Livereload](livereload) will automatically refresh your browser after the build process finishes. Install [this chrome plugin][livereload], hit the button in chrome, and make changes.
 
-    bower install --save xxx
-    npm install --save xxx
+Simplified Dependencies
+-----------------------
+
+You can add dependencies to [package.json][npm] or [bower.json][bower] like normal. Use `grunt install` to install them and their declarations.
+
     grunt install
-    
-- adds declaration files to `types/all.d.ts`
-- use `import _ = require("underscore")` to use npm dependencies
 
-- Automatically manages client-side [NPM][npm] and [Bower][bower] dependencies, including installing declaration files from [DefinitelyTyped][dt]. 
-- [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) the web page whenever you save something (install chrome plugin)
+[TPM][tpm] will download all the declaration files that exist from [DefinitelyTyped][dt] and add them to the `types/` folder. It creates a file, `types/all.d.ts` that references all of them for easy including. 
 
-Grunt Commands
----------------
+To use a package from [NPM][npm], you can just require it. [Browserify][browserify] will make sure to include the source in your project.
 
-This is the only command you really need. It compiles everything, watches for changes, and starts the server. 
+    import _ = require('underscore')
 
-    grunt
+To use a package from [Bower][bower] you currently have to add it to `index.html`.
+
+Project Organization
+--------------------
+
+Angular works most easily with a global scope, with all application code concatenated or included in multiple script tags. After playing with many different structures and module patterns, the simpliest solution was to concat all `.ts` files found under `public/app`. You can still use `require` for [NPM][npm] dependencies in any file.
+
+Any LESS files in `public/app/css` and in `public/app/views` will be automatically included in the output.
+
+Technologies
+-------------
+
+[Typescript][typescript] is a compile-to-js language that adds ES6 features and an advanced strict type system, including generics, type inference, etc. [Click here][typescript] for more information.
+
+[AngularJS][angular] is a Javascript framework that greatly simplifies making data-driven  web applications. 
+
+[LESS][less] adds many useful features to CSS, including variables, mixins, file includes, and more. 
+
+[Bootstrap][bootstrap] is a CSS framework that makes creating a nice-looking site much easier. 
 
 TODO
 ----
@@ -53,46 +69,12 @@ DEPLOY
 - minify JS
 - concat libraries
 
-Application Dependencies
-------------------------
-
-Angular works most easily with a global scope, with all application code concatenated or included in multiple script tags. 
-
-You can assume that app.ts is included first, then all application code second. You can `require` code from NPM within any file, and it browserify will make it work. 
-
-Dependencies
-------------
-
-Any pure Javascript code is installed with NPM, and loaded into the browser using [Browserify][browserify]. We WANT to share dependencies between the two systems, which is why we have a single package.json file for both client and server. 
-
-Any big front-end libraries are installed with bower and included by hand. We will use fewer of these, they're not designed to be included, and depend on each other. 
-
-Tasks
------
-
-### Live reload on save
-
-1. Install this chrome plugin https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en, or uncomment the `<script>` tag in `index.html`
-2. Open the web page and your text editor side-by-side
-3. Edit any file, watch grunt recompile and automatically reload the web page when it is done
-
-### Install Definitely Typed dependencies
-
-They are installed automatically with [TPM][tpm]. Install with `npm install -g tpm`, then they will be installed to `server/types` and `public/app/types` whenever you run `grunt install`.
-
-If you just installed a new npm module, run 'grunt tpm' to install them. 
-
-
-
-Notes
------
-
-Easier directives? I could make a better syntax for it. Or I could just rewrite my article. It's not that hard. I think I get it now :) I'm ready. I'm done. Gogogo. 
-
 
 [browserify]: http://browserify.org/
 [tpm]: http://github.com/seanhess/tpm
 
+[livereload]: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en
+[npm]: npmjs.org
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
@@ -102,3 +84,4 @@ Easier directives? I could make a better syntax for it. Or I could just rewrite 
 [bootstrap]: http://getbootstrap.com/
 [bower]: https://github.com/bower/bower
 [grunt]: http://gruntjs.com
+[less]: lesscss.org
