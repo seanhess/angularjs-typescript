@@ -23,7 +23,14 @@ Comes complete with [Grunt][grunt] workflows to make everything easier.
 
     grunt
 
+Simplifies [NPM][npm] and [Bower][bower] client-side dependencies. 
 
+    bower install --save xxx
+    npm install --save xxx
+    grunt install
+    
+- adds declaration files to `types/all.d.ts`
+- use `import _ = require("underscore")` to use npm dependencies
 
 - Automatically manages client-side [NPM][npm] and [Bower][bower] dependencies, including installing declaration files from [DefinitelyTyped][dt]. 
 - [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) the web page whenever you save something (install chrome plugin)
