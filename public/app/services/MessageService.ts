@@ -17,5 +17,4 @@ export function service($http: ng.IHttpService, $q:ng.IQService) {
             .then(() => null)
         }
     }
-} 
-
+}

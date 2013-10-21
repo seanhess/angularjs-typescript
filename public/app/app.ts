@@ -18,7 +18,10 @@ console.log("Loaded: Underscore", !!_)
 console.log("Loaded: JQuery", !!$) 
 console.log("Loaded: Angular", !!angular)
 
-angular.module('app', [])
+angular.module('services', [])
+angular.module('app', ['services'])
+
+// to this part automatically
 .factory("MessageService", MessageService.service)
 
 // .directive("formcontrol", formcontrol.main)
@@ -26,13 +29,11 @@ angular.module('app', [])
 
 .config(function main($routeProvider: ng.IRouteProvider, $locationProvider: ng.ILocationProvider) {
     $locationProvider.html5Mode(true)
-    $routeProvider.when('/example', {templateUrl: '/app/views/example.html', controller: ExampleControl})
-    // $routeProvider.when('/clients/:id', {templateUrl: '/app/views/client_details.html', controller: clients.details})
-    $routeProvider.otherwise({redirectTo: '/example'})
+    $routeProvider
+        .when('/example', {templateUrl: '/app/views/example.html', controller: ExampleControl})
+        .otherwise({redirectTo: '/example'})
+        // $routeProvider.when('/clients/:id', {templateUrl: '/app/views/client_details.html', controller: clients.details})
 })
 
-// the problem is to boo
-$(function() {
-    angular.bootstrap($(document), ['app'])    
-})
+angular.bootstrap($(document), ['app'])    
 

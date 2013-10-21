@@ -12,13 +12,13 @@ Setup
 TODO
 ----
 
-- rethinkdb example data?
-
 - deploy
 
 - use new service from NPM is as easy as installing it
 - use new directive from NPM is as easy as installing it
 - make new service and use it without registering it?
+
+- source maps
 
 DEPLOY
 - concatenate templates into one file for deployment
@@ -27,6 +27,24 @@ DEPLOY
 
 TEST
 - are source maps working?
+
+
+The problem is that I'm registering it at a different place. In the main file. That's not the normal way you do it. 
+
+Angular team DID say they would switch to ES6 modules. 
+
+"The Future of AngularJS" - https://docs.google.com/presentation/d/1Gv-dvU-yy6WY7SiNJ9QRo9XayPS6N2jtgWezdRpoI04/edit?pli=1#slide=id.p
+    - new dependency injection based on es6 modules
+    - easier to share modules
+    - future: module "myStuff" {}
+
+
+Application Dependencies
+------------------------
+
+Angular works most seamlessly with a global scope, with all application code concatenated or included in multiple script tags. It's module system helps resolve any conflicts, and Typescript takes us rest of the way there. 
+
+
 
 Dependencies
 ------------

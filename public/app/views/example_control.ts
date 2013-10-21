@@ -6,14 +6,15 @@ function ExampleControl($scope:any, $location:ng.ILocationService, MessageServic
     load()
 
     function load() {
-        MessageService.query().then(function(messages) {
-            $scope.messages = messages
-        })
         $scope.fakePeople = [
             {name: "test"}, 
             {name: "asdf"},
             {name: "Catherine is hot, baby"}
         ]
+
+        return MessageService.query().then(function(messages) {
+            $scope.messages = messages
+        })
     }
 
     $scope.details = function(thing) {

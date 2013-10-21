@@ -47,12 +47,6 @@ app.configure("development", () => {
 
 app.get('/messages', function(req, res) {
     res.send(run(r.table('messages')))
-    // var messages:types.IMessage[] = [
-    //     {name:"Henry", body:"This is a message"},
-    //     {name:"Bobby", body:"Hi there Henry"},
-    //     {name:"Wahoo22", body:"Hi there Henry"},
-    // ]
-    // res.send(messages)
 })
 
 app.post('/messages', function(req, res) {

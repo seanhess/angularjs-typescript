@@ -8,6 +8,8 @@
 import q = require('q')
 import r = require('rethinkdb')
 
+export = rdb
+
 // initializes a connection eventually
 function rdb(options:r.ConnectionOptions) {
 
@@ -62,5 +64,4 @@ function rdb(options:r.ConnectionOptions) {
     }
 }
 
-export = rdb
 
