@@ -32,7 +32,7 @@ You can add dependencies to [package.json][npm] or [bower.json][bower] like norm
 
     grunt install
 
-[TPM][tpm] will download all the declaration files that exist from [DefinitelyTyped][dt] and add them to the `types/` folder. It creates a file, `types/all.d.ts` that references all of them for easy including. 
+This will also download all the declaration files that exist from [DefinitelyTyped][dt] and add them to the `types/` folder. It creates a file, `types/all.d.ts` that references all of them for easy including. 
 
 To use a package from [NPM][npm], you can just require it. [Browserify][browserify] will make sure to include the source in your project.
 
