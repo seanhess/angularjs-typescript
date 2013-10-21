@@ -1,12 +1,38 @@
-AngularJS Bootstrap Project (Typescript)
-========================================
+AngularJS Typescript Seed
+=========================
+
+This project aims to demonstrate the "best" project structure and workflow for an [AngularJS][angular] app written in [Typescript][typescript]. 
 
 Setup
 -----
 
+Install grunt and all dependencies dependencies
+
     npm install -g grunt-cli
     npm install
     grunt install
+
+Compile everything, start the server, and live reload whenever you change a file. 
+
+    grunt
+
+Features
+--------
+
+Comes complete with [Grunt][grunt] workflows to make everything easier. 
+
+    grunt
+
+
+
+- Automatically manages client-side [NPM][npm] and [Bower][bower] dependencies, including installing declaration files from [DefinitelyTyped][dt]. 
+- [Livereload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) the web page whenever you save something (install chrome plugin)
+
+Grunt Commands
+---------------
+
+This is the only command you really need. It compiles everything, watches for changes, and starts the server. 
+
     grunt
 
 TODO
@@ -37,10 +63,6 @@ Any big front-end libraries are installed with bower and included by hand. We wi
 Tasks
 -----
 
-### Build, Start the server, Live compile, and Live reload
-
-    grunt
-
 ### Live reload on save
 
 1. Install this chrome plugin https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en, or uncomment the `<script>` tag in `index.html`
@@ -62,12 +84,14 @@ Easier directives? I could make a better syntax for it. Or I could just rewrite 
 
 
 [browserify]: http://browserify.org/
-[TPM]: http://github.com/seanhess/tpm
+[tpm]: http://github.com/seanhess/tpm
 
-[Typescript]: http://www.typescriptlang.org/
-[AngularJS]: http://angularjs.org/
-[jQuery]: http://jquery.com/
-[Browserify]: http://browserify.org/
-[Node]: http://nodejs.org/
-[Bootstrap]: http://getbootstrap.com/
-[Bower]: https://github.com/bower/bower
+[dt]: https://github.com/borisyankov/DefinitelyTyped
+[typescript]: http://www.typescriptlang.org/
+[angular]: http://angularjs.org/
+[jquery]: http://jquery.com/
+[browserify]: http://browserify.org/
+[node]: http://nodejs.org/
+[bootstrap]: http://getbootstrap.com/
+[bower]: https://github.com/bower/bower
+[grunt]: http://gruntjs.com
