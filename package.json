@@ -34,7 +34,8 @@
     "bower": "~1.2.7",
     "typescript-tpm": "~0.1.5",
     "grunt-inline-angular-templates": "~0.1.3",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "mocha": "~1.13.0"
   },
   "bugs": {
     "url": "https://github.com/seanhess/angularjs-bootstrap/issues"
