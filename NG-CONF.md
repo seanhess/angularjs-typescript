@@ -2,10 +2,16 @@ OFFICIAL OUTLINE: ANGULAR + TYPESCRIPT
 ======================================
 
 20 minutes total
-Intro (5 minutes): what I will show you - it's awesome because X, Y, and Z, but no proof
+Intro (MAX 5 minutes): what I will show you - it's awesome because X, Y, and Z, but no proof
 Intro to syntax (5 minutes): how the features work, begin to see
 Concrete example (5 minutes): see syntax at work. you are convinced
 
+
+
+Follow Along:
+-------------
+
+[http://github.com/seanhess/angularjs-typescript](http://github.com/seanhess/angularjs-typescript)
 
 About Me
 --------
@@ -65,19 +71,47 @@ Small Cost
 WHAT IS TYPESCRIPT
 ==================
 
+Getting Started
+---------------
+
+Install Typescript
+
+    > npm install -g typescript
+
+Start With Javascript
+
+    var name = "world"
+
+    function hello(name) {
+        alert("hello " + name)
+    }
+
+    hello(name)
+
+Compile It
+    
+    > tsc test.ts
+
 Add Types to Variables
 ----------------------
 
+Use the Typescript Playground: [http://www.typescriptlang.org/Playground/](http://www.typescriptlang.org/Playground/)
+
     var population:number = 3
+
     var name:string = "hello"
+    var names:string[] = [name];
+
     var user:User;
-    var names:string[];
-    var anything = 33
+
+    var couldBeAnything;
 
 Interfaces
 ----------
 
-    interface IUser {
+Make it easy to enforce the structure of any object
+
+    interface User {
         firstName: string;
         lastName: string;
     }
@@ -86,63 +120,123 @@ Interfaces
         return user.firstName + " " + user.lastName;
     }
 
+    // matches any object
+    var user:User = {firstName:"Very", lastName:"User"}
+
+Type Inference
+--------------
+
+You don't have to tell the compiler everything
+
+    // name is a string
+    var name = fullName(user)
+
+    function sum(a:number, b:number) {
+        return a + b
+    }
+
+    var result = sum(name, 4)
+
 ES6 Features
 ------------
 
-Classes
+External Modules
 
-    class User {
-        constructor(private firstName:string, private lastName:string) {
+    // users.ts
+    export function fullName(user:User):string {
+        return user.firstName + " " + user.lastName
+    }
 
-        }
+    // main.ts
+    import users = require("./users")
+    var name = users.fullName(user)
 
-        fullName():string {
-            return this.firstName + " " + this.lastName
+Internal Modules
+
+    module users {
+        export function fullName(user:User):string {
+            return user.firstName + " " + user.lastName
         }
     }
-    
-Modules
 
-    export function 
+    var name = users.fullName(user)
+
+Classes
+
+    class Animal {
+        public size:number;
+        constructor() {
+            this.size = 0;
+        }
+    }
+
+    class Kitten extends Animal {
+        devour(animal:Animal) {
+            this.size += animal.size
+        }
+    }
 
 Fat Arrow Functions
 
-    class User {
-        public friends:User[];
+    $(".friends").each(function() {
 
-        addFriend(user:User) {
-            this.friends.push(user)
-        }
+        $.get("/users", (users) => {
 
-        addFriends(users:User[]) {
-            users.forEach((user) => this.addFriend(user))
-        }
+            // preserve this pointer
+            var $div = $(this)
+
+            // cheap functions
+            var firstNames = users.map((user) => user.firstName)
+
+            $div.text(firstNames.join(", "))
+        })
+    })
+
+
+Generics
+--------
+
+Use the same well-tested functions on multiple types
+
+    // returns the first of an array
+    function firstValue<T>(array:T[]):T {
+        return array[0]
     }
 
-IDE and Editor Integration
---------------------------
-
-Show Sublime Text and Webstorm pictures
-
-[ ] Sublime Text
-[ ] Webstorm 
-
-    - show what errors look like
-    - show auto completion
-
-+ Links
+    // these will give errors.
+    var one:string = firstValue([1,2,3,4,5])
+    var two:number = firstValue(["one", "two"])
 
 Definition Files
 ----------------
  
-Show JQuery and Angular?
+External type definition files for many libraries on [DefinitelyTyped][dt]
+
+    declare module ng {
+        interface IScope {
+            $parent:IScope;
+            $eval(expressions:string):any;
+            $watch(expressions:string):any;
+        }
+    }
+
+    function MyController(scope:ng.IScope) {}
+
+IDE and Editor Integration
+--------------------------
+
+Error checking and Autocomplete:
+
+- [Sublime Text 3](https://github.com/Railk/T3S)
+- [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/)
+- [Vim](https://github.com/clausreinke/typescript-tools)
+- [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=34790)
 
 
+TYPESCRIPT + ANGULAR
+====================
 
-HOW TO ADD TYPESCRIPT TO YOUR ANGULAR PROJECT
-=============================================
-
-Made easy!
+Let's get them to play nice...
 
 Start with your Data Model
 --------------------------
@@ -167,7 +261,7 @@ Make a file with shared application types: `applicationTypes.ts`
     }
 
     // another file
-    function renderPost(post:Post) {
+    function somethingWithPost(post:Post) {
         // now it will catch errors for you
         // easier to think about
     }
@@ -176,10 +270,14 @@ Make a file with shared application types: `applicationTypes.ts`
 - you want to enforce these, trust me
 - only use interfaces, not classes... no converting
 
+Add Definition Files
+--------------------
+
 Angular Controller
 ------------------
 
 - example
+- $http:ng.IHttpService
 
 Add Constraints Incrementally
 -----------------------------
@@ -191,9 +289,6 @@ Angular Service
 
 - formalize an API
 - can use classes
-
-Add Definition Files
---------------------
 
 Add a build step
 ----------------
@@ -213,9 +308,15 @@ Ignore ES6 Modules, Probably
 - include them normally
 - If already using browserify or AMD then go ahead and use them. 
 
+- show internal modules?
+
+
 Demo a Refactor? Or some other cool change
 ------------------------------------------
 
-+ show it in action
++ show it in action. need a good example.
+- show an example where you wouldn't catch the error. In an inner block
 
-
+[dt]: https://github.com/borisyankov/DefinitelyTyped
+[typescript]: http://www.typescriptlang.org/
+[angular]: http://angularjs.org/
