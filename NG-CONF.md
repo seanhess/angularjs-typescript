@@ -1,22 +1,10 @@
 OFFICIAL OUTLINE: ANGULAR + TYPESCRIPT
 ======================================
 
-You need to keep this first section short. It's a way of introducing what you're going to show in the big example. 
-
-
-Intro: what I will show you - it's awesome because X, Y, and Z, but no proof
-Intro to syntax: how the features work, begin to see
-Concrete example: see syntax at work. you are convinced
-
-
-Intro/Why: 5 minutes
-Syntax: 7 minutes
-Example: 8 minutes
-
-
-
-
-
+20 minutes total
+Intro (5 minutes): what I will show you - it's awesome because X, Y, and Z, but no proof
+Intro to syntax (5 minutes): how the features work, begin to see
+Concrete example (5 minutes): see syntax at work. you are convinced
 
 
 About Me
@@ -62,6 +50,7 @@ Big Benefits
 - modern type system = catch lots of errors
 - some self-documentation
 - like tests INLINE with your code, automatically in step. Like a whole CI suite.
+- es6 features
 
 Small Cost
 --------------------------
@@ -190,6 +179,8 @@ Make a file with shared application types: `applicationTypes.ts`
 Angular Controller
 ------------------
 
+- example
+
 Add Constraints Incrementally
 -----------------------------
 
@@ -215,12 +206,16 @@ No way to type views :(
 <!-- will not throw an error -->
 <div>{{currentUser.firstNaem}}</div>
 
-Ignore Modules for now
-----------------------
+Ignore ES6 Modules, Probably
+----------------------------
 
-If already using browserify or AMD then go ahead and use them. 
+- turn .ts files into .js files
+- include them normally
+- If already using browserify or AMD then go ahead and use them. 
 
 Demo a Refactor? Or some other cool change
 ------------------------------------------
+
++ show it in action
 
 
