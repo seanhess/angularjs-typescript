@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>My Application!</title>
 
-  <!-- APPLICATION STYLES (includes bootstrap) -->
-  <link rel="stylesheet" href="/css/main.css">  
+  <link rel="stylesheet" href="css/main.css">  
   <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 
 </head>
@@ -14,14 +13,11 @@
     <!-- Main View -->
     <div ng-view="" class="main">Loading...</div>
     
-    <!-- bower dependencies are included by hand -->
-    <script src="/bower/jquery/jquery.js"></script>
-    <script src="/bower/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/bower/angular/angular.js"></script>
+    <!-- bower dependencies -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
 
-    <!-- Pure JS code is included with NPM instead (like underscore) -->
-    <!-- Application Code: compiled by grunt, typescript, and browserify -->
-    <script src="/index.js"></script>
-
+    <!-- Application Code -->
+    <script src="dist/index.js"></script>
 </body>
 </html>

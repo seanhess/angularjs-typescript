@@ -1,10 +1,5 @@
 /// <reference path="../all.d.ts"/>
 
-interface IMessage {
-    name: string;
-    body: string;
-}
-
 interface IMessageService {
     query():ng.IPromise<IMessage[]>;
     save(message:IMessage):ng.IPromise<void>;

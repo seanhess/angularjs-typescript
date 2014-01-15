@@ -6,12 +6,14 @@ Intro (MAX 5 minutes): what I will show you - it's awesome because X, Y, and Z, 
 Intro to syntax (5 minutes): how the features work, begin to see
 Concrete example (5 minutes): see syntax at work. you are convinced
 
+INTRO: much shorter! Just reduce to one slide
+
 
 
 Follow Along:
 -------------
 
-[http://github.com/seanhess/angularjs-typescript](http://github.com/seanhess/angularjs-typescript)
+[github.com/seanhess/angularjs-typescript](http://github.com/seanhess/angularjs-typescript)
 
 About Me
 --------
@@ -19,53 +21,25 @@ About Me
 Sean Hess
 
 - [@seanhess](http://twitter.com/seanhess)
-- [http://seanhess.github.io](http://seanhess.github.io)
-- [http://github.com/seanhess](http://github.com/seanhess/)
+- [seanhess.github.io](http://seanhess.github.io)
+- [github.com/seanhess](http://github.com/seanhess/)
 
 
-WHY TYPESCRIPT
+WHY TYPESCRIPT?
 ==================================
 
 Story of a Javascript team
 --------------------------
 
-Story: Started out small, it was great. Hired people, larger applications. Critical/legacy applications. We started to slow down. Tests were a huge amount of effort and hard to maintain.
+Started out small and fast, but it got hard to work
 
-Formalize your decisions
-------------------------
+Typescript = best of both worlds
+--------------------------------
 
-"But I want to be free!"
-
-- tests and documentation
-- avoid huge up-front costs
-- when you know you want something to stay the same
-
-Cost vs Benefits
-----------------
-
-- every way to enforce constraints and prevent bugs costs something
-- tests: up-front investment, skill, 
-- documentation: maintenance, prototyping 
-
-Big Benefits
-------------------------------
-
-- similar benefits to testing
-- catch errors in context (line, early)
-- enforce constraints
-- modern type system = catch lots of errors
-- some self-documentation
-- like tests INLINE with your code, automatically in step. Like a whole CI suite.
-- es6 features
-
-Small Cost
---------------------------
-- it's just JS/ES6. Clean output
-- optional types
-- easy - inferred typing
-
-- 80/20 rule: 80% of the benefit of testing, with 20% of the effort
-
+- 80% of the benefit of testing, 20% of the cost
+- see mistakes inline
+- formalize your choices
+- modern features make it easy: optional, inferred
 
 
 WHAT IS TYPESCRIPT
@@ -95,7 +69,7 @@ Compile It
 Add Types to Variables
 ----------------------
 
-Use the Typescript Playground: [http://www.typescriptlang.org/Playground/](http://www.typescriptlang.org/Playground/)
+Try these in the Typescript Playground: [www.typescriptlang.org/Playground](http://www.typescriptlang.org/Playground/)
 
     var population:number = 3
 
@@ -116,12 +90,13 @@ Make it easy to enforce the structure of any object
         lastName: string;
     }
 
+    // interface matches any object with the right fields
+    var user:User = {firstName:"Very", lastName:"User"}
+    var user2:User = {name:"Very User"} // error
+
     function fullName(user:User):string {
         return user.firstName + " " + user.lastName;
     }
-
-    // matches any object
-    var user:User = {firstName:"Very", lastName:"User"}
 
 Type Inference
 --------------
@@ -268,33 +243,38 @@ Make a file with shared application types: `applicationTypes.ts`
     }
 
 - good for thinking about your app
-- you want to enforce these, trust me
-- only use interfaces, not classes... no converting
+- you want this to be enforced ASAP
+
++ example of adding our types to existing angular application
 
 Add Definition Files
 --------------------
+
++ show adding the definition file and typing the angular things to get.
 
 Angular Controller
 ------------------
 
 - example
 - $http:ng.IHttpService
+- add a scope interface if you want
 
 Add Constraints Incrementally
 -----------------------------
 
 - when they make sense
+- don't have to add it everywhere
 
 Angular Service
 ---------------
 
 - formalize an API
-- can use classes
+- mention: can use classes
 
 Add a build step
 ----------------
 
-- grunt demo?
+- grunt demo
 
 No way to type views :(
 -----------------------
@@ -311,7 +291,6 @@ Ignore ES6 Modules, Probably
 
 - show internal modules?
 
-
 Demo a Refactor? Or some other cool change
 ------------------------------------------
 
@@ -321,3 +300,16 @@ Demo a Refactor? Or some other cool change
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
+
+
+TODO
+
+- I need a good sample application. A blogging engine? Uses some awesome back end
+    - messaging: just an anonymous message board
+
+
+
+- Other links: https://github.com/tastejs/todomvc/tree/gh-pages/labs/architecture-examples/typescript-angular
+- typescript + angular = MVCTODO
+
+- link: example of using the "vm" method for controllers
