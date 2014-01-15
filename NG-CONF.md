@@ -227,9 +227,10 @@ IDE and Editor Integration
 
 Error checking and Autocomplete:
 
-- [Sublime Text 3](https://github.com/Railk/T3S)
-- [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/)
+- [Sublime Text 3 - Full Plugin](https://github.com/Railk/T3S)
+- [Sublime Text 3 - Build Errors](https://github.com/seanhess/sublime-build-errors)
 - [Vim](https://github.com/clausreinke/typescript-tools)
+- [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/)
 - [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=34790)
 
 
