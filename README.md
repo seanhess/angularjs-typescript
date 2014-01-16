@@ -108,6 +108,20 @@ You don't have to tell the compiler everything
 
     var result = sum(name, 4)
 
+Generics
+--------
+
+Use the same well-tested functions on multiple types
+
+    // returns the first of an array
+    function firstValue<T>(array:T[]):T {
+        return array[0]
+    }
+
+    // these will give errors.
+    var one:string = firstValue([1,2,3,4,5])
+    var two:number = firstValue(["one", "two"])
+
 ES6 Features
 ------------
 
@@ -169,21 +183,6 @@ Fat Arrow Functions
             })
         }
     }
-
-
-Generics
---------
-
-Use the same well-tested functions on multiple types
-
-    // returns the first of an array
-    function firstValue<T>(array:T[]):T {
-        return array[0]
-    }
-
-    // these will give errors.
-    var one:string = firstValue([1,2,3,4,5])
-    var two:number = firstValue(["one", "two"])
 
 Definition Files
 ----------------
@@ -265,7 +264,6 @@ Angular Controller
 
 Start with [`todoCtrl.js`][todoCtrl.js] 
 
-    // todoCtrl.js
     todomvc.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, todoStorage, filterFilter) {
         var todos = $scope.todos = todoStorage.get();
         ...
@@ -297,14 +295,14 @@ Start with [`todoCtrl.js`][todoCtrl.js]
         status:string;
     }
 
-Add types to the signature
+Add types to the parameters
 
     todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routeParams:TodoCtrlRouteParams, todoStorage:TodoStorage, filterFilter) {
         var todos = $scope.todos = todoStorage.get();
         ...
     })
 
-To use classes use [view model method](TODO)
+To use classes use [view model method](https://github.com/tastejs/todomvc/blob/gh-pages/labs/architecture-examples/typescript-angular/js/controllers/TodoCtrl.ts)
 
 Angular Service
 ---------------
@@ -356,24 +354,26 @@ todomvc.service('todoStorage', TodoStorage)
 
 Lets you formalize an API
 
-Alternatively, you could use a normal factory function + an interface
+Alternatively, you could just add an interface
 
 Add a build step
 ----------------
 
-add compile command to your [Gruntfile.js][Gruntfile.js]. Don't type it.
+Add a build step to your [Gruntfile.js][Gruntfile.js]
 
-    exec: {
-        tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts'},
-    }
-
-    watch: {
-        public: {
-            files: ["public/**/*.ts"],
-            tasks: ["exec:tsPublic"],
-            options: { livereload: true },
+    grunt.initConfig({
+        exec: {
+            tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts'},
         },
-    }
+
+        watch: {
+            public: {
+                files: ["public/**/*.ts"],
+                tasks: ["exec:tsPublic"],
+                options: { livereload: true },
+            },
+        }
+    })
 
     grunt.registerTask('default', ['exec:tsPublic', 'watch'])
 
@@ -388,19 +388,13 @@ Using ES6 Modules
 
 - simplest: just include all the generated .js files
 - add a build script: `grunt concat`
-- to namespace, use internal modules
+- namespaces? use internal modules
 - with browserify or AMD: use external modules
 
-Demo a Refactor? Or some other cool change
-------------------------------------------
-
-- live code: Typescript will save us!
-
-Other cool things you could try:
+Live Code: Refactoring a Service
 --------------------------------
 
-- Rich models with classes
-- 
+Typescript will save us!
 
 What about Dart? Coffeescript?
 ------------------------------
@@ -408,6 +402,11 @@ What about Dart? Coffeescript?
 - can only use one transpiler
 - was worth giving up [Coffeescript](http://coffeescript.org/)
 - Dart has a cool type system, but it is all-in. Poor code reuse. 
+
+Other cool things you could try:
+--------------------------------
+
+- Rich models with classes
 
 IT'S OVER!
 ==========
