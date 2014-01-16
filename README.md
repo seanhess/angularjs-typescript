@@ -196,7 +196,7 @@ Error checking and Autocomplete:
 
 - [Sublime Text 3 - T3S](https://github.com/Railk/T3S) - IDE-like
 - [Sublime Text 3 - Build Errors](https://github.com/seanhess/sublime-build-errors) - Building, Errors
-- Vim [1](https://github.com/clausreinke/typescript-tools) [2](https://github.com/leafgarland/typescript-vim)
+- Vim [[1]](https://github.com/clausreinke/typescript-tools) [[2]](https://github.com/leafgarland/typescript-vim)
 - [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/) - IDE
 - [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=34790) - IDE
 
@@ -237,18 +237,68 @@ Add Definition Files
 - Add [`angular.d.ts`][angular.d.ts] and [`jquery.d.ts`][jquery.d.ts] to a types folder
 - Add links to [`types.ts`][types.ts]
 
+    /// <reference path="./types/jquery/jquery.d.ts"/>
+    /// <reference path="./types/angularjs/angular.d.ts"/>
+    /// <reference path="./types/angularjs/angular-route.d.ts"/>
+
+    interface Todo {
+        completed: boolean;
+        title: string;
+    }
+
 Add Constraints Incrementally
 -----------------------------
 
 - when they make sense
 - as you formalize things
 
++ TODO: Need Example
+
 Angular Controller
 ------------------
 
-- add types to dependencies
-- add a scope interface
 - convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
+
+todoCtrl.js
+
+    todomvc.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, todoStorage, filterFilter) {
+        var todos = $scope.todos = todoStorage.get();
+        ...
+    })
+
+Add some interfaces for the scope and params
+
+    interface TodoCtrlScope extends ng.IScope {
+        todos:Todo[];
+        newTodo:string;
+        editedTodo:Todo;
+        originalTodo:Todo;
+        remainingCount:number;
+        completedCount:number;
+        allChecked:boolean;
+        status:string;
+        statusFilter:{completed:boolean};
+
+        addTodo();
+        editTodo(todo:Todo);
+        doneEditing(todo:Todo);
+        revertEditing(todo:Todo);
+        removeTodo(todo:Todo);
+        clearCompletedTodos(todo);
+        markAll(completed:boolean);
+
+    }
+
+    interface TodoCtrlRouteParams {
+        status:string;
+    }
+
+Add types to the signature
+
+    todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routeParams:TodoCtrlRouteParams, todoStorage:TodoStorage, filterFilter) {
+        var todos = $scope.todos = todoStorage.get();
+        ...
+    })
 
 Angular Service
 ---------------
@@ -291,7 +341,7 @@ What about Dart? Coffeescript?
 - was worth giving up [Coffeescript](http://coffeescript.org/)
 - Dart has a cool type system, but it is all-in. Poor code reuse. 
 
-It's over!
+IT'S OVER!
 ==========
 
 [github.com/seanhess/angularjs-typescript][angularjs-typescript]
@@ -315,4 +365,9 @@ Concat Me: [@seanhess][@seanhess]
 
 [angularjs-typescript]: http://github.com/seanhess/angularjs-typescript
 [@seanhess]: http://twitter.com/seanhess
+
+
+TODO: paste code into presentation
+TODO: refactoring/full example
+
 
