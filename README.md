@@ -194,11 +194,11 @@ IDE and Editor Integration
 
 Error checking and Autocomplete:
 
-- [Sublime Text 3 - Full Plugin](https://github.com/Railk/T3S)
-- [Sublime Text 3 - Build Errors](https://github.com/seanhess/sublime-build-errors)
-- [Vim](https://github.com/clausreinke/typescript-tools)
-- [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/)
-- [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=34790)
+- [Sublime Text 3 - T3S](https://github.com/Railk/T3S) - IDE-like
+- [Sublime Text 3 - Build Errors](https://github.com/seanhess/sublime-build-errors) - Building, Errors
+- Vim [1](https://github.com/clausreinke/typescript-tools) [2](https://github.com/leafgarland/typescript-vim)
+- [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/enjoy-typescript-in-webstorm/) - IDE
+- [Visual Studio](http://www.microsoft.com/en-us/download/details.aspx?id=34790) - IDE
 
 
 TYPESCRIPT + ANGULAR
@@ -221,7 +221,7 @@ Make a file with shared application types: [`types.ts`][types.ts]. Data first de
         title: string;
     }
 
-Add `:Todo` everywhere you use it
+Add `:Todo` to function signatures
 
     function createTodo(text):Todo {
         return {
