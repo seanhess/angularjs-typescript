@@ -35,6 +35,7 @@ Typescript: best of both worlds
 - modern features make it easy: optional, inferred
 - autocomplete
 
+![Editor Screenshot](public/img/editor.png)
 
 WHAT IS TYPESCRIPT?
 ==================
@@ -394,7 +395,8 @@ Using ES6 Modules
 Live Code: Refactoring a Service
 --------------------------------
 
-Typescript will save us!
+- Let's use promises. What could go wrong?
+- Typescript will save us!
 
 What about Dart? Coffeescript?
 ------------------------------
@@ -434,7 +436,8 @@ Concat Me: [@seanhess][@seanhess]
 [@seanhess]: http://twitter.com/seanhess
 
 
-TODO: paste code into presentation
-TODO: refactoring/full example
 TODO: paste in images of IDEs
+
+
+
 
