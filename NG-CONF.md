@@ -1,13 +1,5 @@
-OFFICIAL OUTLINE: ANGULAR + TYPESCRIPT
-======================================
-
-20 minutes total
-Intro (MAX 5 minutes): what I will show you - it's awesome because X, Y, and Z, but no proof
-Intro to syntax (5 minutes): how the features work, begin to see
-Concrete example (5 minutes): see syntax at work. you are convinced
-
-INTRO: much shorter! Just reduce to one slide
-
+Angular + Typescript = ♥
+===========================
 
 Follow Along:
 -------------
