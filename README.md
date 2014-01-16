@@ -26,7 +26,7 @@ Story of a Javascript team
 It all started with Javascript...
 
 
-Typescript = best of both worlds
+Typescript: best of both worlds
 --------------------------------
 
 - 80% of the benefit of testing, 20% of the cost
@@ -291,11 +291,11 @@ What about Dart? Coffeescript?
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
-[types.ts]: blob/master/public/js/types.ts
-[angular.d.ts]: blob/master/public/js/types/angular/angular.d.ts
-[jquery.d.ts]: blob/master/public/js/types/jquery/jquery.d.ts
-[todoStorage.js]: blob/master/public/js/services/todoStorage.js
-[todoStorage.ts]: blob/master/public/js/services/todoStorage.ts
+[types.ts]: public/js/types.ts
+[angular.d.ts]: public/js/types/angular/angular.d.ts
+[jquery.d.ts]: public/js/types/jquery/jquery.d.ts
+[todoStorage.js]: public/js/services/todoStorage.js
+[todoStorage.ts]: public/js/services/todoStorage.ts
 
 TODO
 
