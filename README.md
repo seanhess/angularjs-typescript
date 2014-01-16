@@ -79,9 +79,7 @@ Produces output that looks the same
 Interfaces
 ----------
 
-It's the LAW: outlaw cowboy coding...
-
-![Cowboy](public/img/cowboy-coder.png)
+Make some rules and keep them
 
     interface User {
         firstName: string;
@@ -101,7 +99,7 @@ Type Inference
 
 The compiler can read your mind
 
-<img src="public/img/telepathy.jpg" style="width: 200px; height: 200px"/>
+![Telepathy](public/img/telepathy.jpg)
 
     // name is a string
     var name = fullName(user)
@@ -115,7 +113,7 @@ The compiler can read your mind
 Generics
 --------
 
-Use the same well-tested functions on multiple types
+The same function works on different types
 
     // returns the first of an array
     function firstValue<T>(array:T[]):T {
