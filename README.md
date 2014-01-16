@@ -23,8 +23,7 @@ WHY TYPESCRIPT?
 Story of a Javascript team
 --------------------------
 
-It all started with Javascript...
-
+Big JS application? What could go wrong?
 
 Typescript: best of both worlds
 --------------------------------
@@ -80,7 +79,9 @@ Produces output that looks the same
 Interfaces
 ----------
 
-Make it easy to enforce the structure of any object
+It's the LAW: outlaw cowboy coding...
+
+![Cowboy](public/img/cowboy-coder.jpg)
 
     interface User {
         firstName: string;
@@ -98,7 +99,9 @@ Make it easy to enforce the structure of any object
 Type Inference
 --------------
 
-You don't have to tell the compiler everything
+The compiler can read your mind
+
+![Telepathy](public/img/telepathy.jpg)
 
     // name is a string
     var name = fullName(user)
