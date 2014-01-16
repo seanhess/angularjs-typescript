@@ -34,7 +34,9 @@ Typescript: best of both worlds
 - modern features make it easy: optional, inferred
 - autocomplete
 
-![Editor Screenshot](public/img/editor.png)
+![Editor Errors](public/img/editor-errors.png)
+
+![Editor Autocomplete](public/img/editor-complete.png)
 
 WHAT IS TYPESCRIPT?
 ==================
