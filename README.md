@@ -119,7 +119,6 @@ Generics
 
 The same function works on different types
 
-    // returns the first of an array
     function firstValue<T>(array:T[]):T {
         return array[0]
     }
@@ -308,7 +307,7 @@ Add types to the parameters
         ...
     })
 
-To use classes use [view model method](https://github.com/tastejs/todomvc/blob/gh-pages/labs/architecture-examples/typescript-angular/js/controllers/TodoCtrl.ts)
+To use classes consider the [view model method](https://github.com/tastejs/todomvc/blob/gh-pages/labs/architecture-examples/typescript-angular/js/controllers/TodoCtrl.ts)
 
 Angular Service
 ---------------
@@ -382,6 +381,10 @@ Add a build step to your [Gruntfile.js][Gruntfile.js]
     })
 
     grunt.registerTask('default', ['exec:tsPublic', 'watch'])
+
+Then just run `grunt`
+    
+    > grunt
 
 No way to type views :(
 -----------------------
