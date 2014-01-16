@@ -292,7 +292,7 @@ What about Dart? Coffeescript?
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
 [types.ts]: public/js/types.ts
-[angular.d.ts]: public/js/types/angular/angular.d.ts
+[angular.d.ts]: public/js/types/angularjs/angular.d.ts
 [jquery.d.ts]: public/js/types/jquery/jquery.d.ts
 [todoStorage.js]: public/js/services/todoStorage.js
 [todoStorage.ts]: public/js/services/todoStorage.ts
@@ -301,8 +301,6 @@ TODO
 
 - I need a good sample application. A blogging engine? Uses some awesome back end
     - messaging: just an anonymous message board
-
-
 
 - Other links: https://github.com/tastejs/todomvc/tree/gh-pages/labs/architecture-examples/typescript-angular
 - typescript + angular = MVCTODO
