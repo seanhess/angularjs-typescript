@@ -1,5 +1,5 @@
-Angular + Typescript = ♥
-===========================
+AngularJS + Typescript ♥♥
+=========================
 
 Follow Along:
 -------------
@@ -11,9 +11,9 @@ About Me
 
 Sean Hess
 
-- [@seanhess](http://twitter.com/seanhess)
-- [seanhess.github.io](http://seanhess.github.io)
-- [github.com/seanhess](http://github.com/seanhess/)
+- Twitter: [@seanhess](http://twitter.com/seanhess)
+- Blog: [seanhess.github.io](http://seanhess.github.io)
+- Github: [github.com/seanhess](http://github.com/seanhess/)
 
 
 
@@ -23,7 +23,8 @@ WHY TYPESCRIPT?
 Story of a Javascript team
 --------------------------
 
-Started out small and fast, but it got hard to work
+It all started with Javascript...
+
 
 Typescript = best of both worlds
 --------------------------------
@@ -32,9 +33,10 @@ Typescript = best of both worlds
 - see mistakes inline
 - formalize your choices
 - modern features make it easy: optional, inferred
+- autocomplete
 
 
-WHAT IS TYPESCRIPT
+WHAT IS TYPESCRIPT?
 ==================
 
 Getting Started
@@ -44,15 +46,12 @@ Install Typescript
 
     > npm install -g typescript
 
-Start With Javascript
-
-    var name = "world"
+It is just JavaScript/ES6
 
     function hello(name) {
         alert("hello " + name)
     }
-
-    hello(name)
+    hello("world")
 
 Compile It
     
@@ -107,7 +106,7 @@ You don't have to tell the compiler everything
 ES6 Features
 ------------
 
-External Modules
+External Modules: can output CommonJS or AMD
 
     // users.ts
     export function fullName(user:User):string {
@@ -184,6 +183,7 @@ External type definition files for many libraries on [DefinitelyTyped][dt]
             $parent:IScope;
             $eval(expressions:string):any;
             $watch(expressions:string):any;
+            ... 
         }
     }
 
@@ -204,45 +204,51 @@ Error checking and Autocomplete:
 TYPESCRIPT + ANGULAR
 ====================
 
-Let's get them to play nice...
+Add Typescript to TodoMVC AngularJS
+-----------------------------------
+
+Start with TodoMVC, let's add Typescript to it
+
+[http://todomvc.com/architecture-examples/angularjs/](http://todomvc.com/architecture-examples/angularjs/)
 
 Start with your Data Model
 --------------------------
 
-Make a file with shared application types: `applicationTypes.ts`
+Make a file with shared application types: [`types.ts`][types.ts]. Data first design.
 
-    interface User {
-        firstName:string;
-        lastName:string;
+    interface Todo {
+        completed: boolean;
+        title: string;
     }
 
-    interface Post {
-        user: User;
-        text: string;
-        created: Date;
-        comments: Comment[];
+Add `:Todo` everywhere you use it
+
+    function createTodo(text):Todo {
+        return {
+            title: text,
+            completed: false
+        }
     }
-
-    interface Comment {
-        text: string;
-        user: User;
-    }
-
-    // another file
-    function somethingWithPost(post:Post) {
-        // now it will catch errors for you
-        // easier to think about
-    }
-
-- good for thinking about your app
-- you want this to be enforced ASAP
-
-+ example of adding our types to existing angular application
 
 Add Definition Files
 --------------------
 
-+ show adding the definition file and typing the angular things to get.
+- Get them from [DefinitelyTyped][dt]
+- Add [`angular.d.ts`][angular.d.ts] and [`jquery.d.ts`][jquery.d.ts] to a types folder
+- Add links to [`types.ts`][types.ts]
+
+Add Constraints Incrementally
+-----------------------------
+
+- when they make sense
+- don't have to add it everywhere
+- as you formalize things
+
+Angular Service
+---------------
+
+- formalize an API
+- use a class to convert [`todoStorage.js`][todoStorage.js] to [`todoStorage.ts`][todoStorage.ts]
 
 Angular Controller
 ------------------
@@ -250,18 +256,6 @@ Angular Controller
 - example
 - $http:ng.IHttpService
 - add a scope interface if you want
-
-Add Constraints Incrementally
------------------------------
-
-- when they make sense
-- don't have to add it everywhere
-
-Angular Service
----------------
-
-- formalize an API
-- mention: can use classes
 
 Add a build step
 ----------------
@@ -297,9 +291,11 @@ What about Dart? Coffeescript?
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
-
-
-
+[types.ts]: blob/master/public/js/types.ts
+[angular.d.ts]: blob/master/public/js/types/angular/angular.d.ts
+[jquery.d.ts]: blob/master/public/js/types/jquery/jquery.d.ts
+[todoStorage.js]: blob/master/public/js/services/todoStorage.js
+[todoStorage.ts]: blob/master/public/js/services/todoStorage.ts
 
 TODO
 

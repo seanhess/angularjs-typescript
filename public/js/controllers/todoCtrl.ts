@@ -34,7 +34,7 @@ todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routePar
     $scope.newTodo = ""
     $scope.editedTodo = null;
 
-    $scope.$watch('todos', function (newValue, oldValue) {
+    $scope.$watch('todos', function(newValue, oldValue) {
         $scope.remainingCount = filterFilter(todos, { completed: false }).length;
         $scope.completedCount = todos.length - $scope.remainingCount;
         $scope.allChecked = !$scope.remainingCount;
@@ -44,7 +44,7 @@ todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routePar
     }, true);
 
     // Monitor the current route for changes and adjust the filter accordingly.
-    $scope.$on('$routeChangeSuccess', function () {
+    $scope.$on('$routeChangeSuccess', function() {
         var status = $scope.status = $routeParams.status || '';
 
         $scope.statusFilter = (status === 'active') ?
@@ -66,13 +66,13 @@ todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routePar
         $scope.newTodo = '';
     };
 
-    $scope.editTodo = function (todo) {
+    $scope.editTodo = function(todo) {
         $scope.editedTodo = todo;
         // Clone the original todo to restore it on demand.
         $scope.originalTodo = angular.extend({}, todo);
     };
 
-    $scope.doneEditing = function (todo) {
+    $scope.doneEditing = function(todo) {
         $scope.editedTodo = null;
         todo.title = todo.title.trim();
 
@@ -81,23 +81,23 @@ todomvc.controller('TodoCtrl', function TodoCtrl($scope:TodoCtrlScope, $routePar
         }
     };
 
-    $scope.revertEditing = function (todo) {
+    $scope.revertEditing = function(todo) {
         todos[todos.indexOf(todo)] = $scope.originalTodo;
         $scope.doneEditing($scope.originalTodo);
     };
 
-    $scope.removeTodo = function (todo) {
+    $scope.removeTodo = function(todo) {
         todos.splice(todos.indexOf(todo), 1);
     };
 
-    $scope.clearCompletedTodos = function () {
+    $scope.clearCompletedTodos = function() {
         $scope.todos = todos = todos.filter(function (val) {
             return !val.completed;
         });
     };
 
-    $scope.markAll = function (completed) {
-        todos.forEach(function (todo) {
+    $scope.markAll = function(completed) {
+        todos.forEach(function(todo) {
             todo.completed = !completed;
         });
     };
