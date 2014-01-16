@@ -368,7 +368,7 @@ Add a build step to your [Gruntfile.js][Gruntfile.js]
 
     grunt.initConfig({
         exec: {
-            tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts'},
+            tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts -t ES5'},
         },
 
         watch: {
@@ -382,7 +382,7 @@ Add a build step to your [Gruntfile.js][Gruntfile.js]
 
     grunt.registerTask('default', ['exec:tsPublic', 'watch'])
 
-Then just run `grunt`
+Then just run `grunt`, and start saving files
     
     > grunt
 
