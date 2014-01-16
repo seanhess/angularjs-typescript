@@ -6,8 +6,8 @@ public/components
 public/bower
 bower
 public/lib
-*.js
 *.js.map
+*.map
 *.css
 public/app/types
 server/types

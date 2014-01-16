@@ -241,13 +241,12 @@ Add Constraints Incrementally
 -----------------------------
 
 - when they make sense
-- don't have to add it everywhere
 - as you formalize things
 
 Angular Service
 ---------------
 
-- formalize an API
+- formalize your API
 - use a class to convert [`todoStorage.js`][todoStorage.js] to [`todoStorage.ts`][todoStorage.ts]
 
 Angular Controller
