@@ -295,7 +295,7 @@ Add types to the signature
 Angular Service
 ---------------
 
-- use a class to convert [`todoStorage.js`][todoStorage.js] to [`todoStorage.ts`][todoStorage.ts]
+Start with [`todoStorage.js`][todoStorage.js]
 
 ```
 todomvc.factory('todoStorage', function () {
@@ -312,6 +312,8 @@ todomvc.factory('todoStorage', function () {
     };
 });
 ```
+
+To make [`todoStorage.ts`][todoStorage.ts], let's use a class
 
 ```
 class TodoStorage {
