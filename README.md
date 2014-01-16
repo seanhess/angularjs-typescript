@@ -293,7 +293,7 @@ What about Dart? Coffeescript?
 [types.ts]: public/js/types.ts
 [angular.d.ts]: public/js/types/angularjs/angular.d.ts
 [jquery.d.ts]: public/js/types/jquery/jquery.d.ts
-[todoStorage.js]: public/js/services/todoStorage.js
+[todoStorage.js]: http://github.com/seanhess/angularjs-typescript/blob/js/public/js/services/todoStorage.js
 [todoStorage.ts]: public/js/services/todoStorage.ts
 
 TODO
