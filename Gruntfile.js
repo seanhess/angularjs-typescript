@@ -9,8 +9,8 @@ module.exports = function(grunt) {
       npm: { cmd: 'npm install' },
       bower: { cmd: 'bower install'},
       server: { cmd: 'node server/server.js' },
-      tsServer: { cmd: 'node_modules/.bin/tsc server/server.ts -m commonjs'},
-      tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts'},
+      tsServer: { cmd: 'node_modules/.bin/tsc server/server.ts -m commonjs -t ES5'},
+      tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts -t ES5'},
     },
 
     less: {

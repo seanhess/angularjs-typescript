@@ -39,6 +39,9 @@ Typescript: best of both worlds
 WHAT IS TYPESCRIPT?
 ==================
 
+- basically compiles ES6 to JavaScript
+- committed to keep in sync with ES6
+
 Getting Started
 ---------------
 
@@ -70,6 +73,8 @@ Try these in the Typescript Playground: [www.typescriptlang.org/Playground](http
     var user:User;
 
     var couldBeAnything;
+
+Produces output that looks the same
 
 Interfaces
 ----------
@@ -137,26 +142,33 @@ Classes
     }
 
     class Kitten extends Animal {
+        public furriness:number
+
         devour(animal:Animal) {
             this.size += animal.size
+        }
+
+        get isCute() {
+            return (this.size < 10 && this.furriness > 5)
         }
     }
 
 Fat Arrow Functions
 
-    $(".friends").each(function() {
+    var service = {
+        names: [],
 
-        $.get("/users", (users) => {
+        loadNames: function() {
+            $.get("/users", (users) => {
 
-            // preserve this pointer
-            var $div = $(this)
+                // cheap inline functions
+                var firstNames = users.map((user) => user.firstName)
 
-            // cheap functions
-            var firstNames = users.map((user) => user.firstName)
-
-            $div.text(firstNames.join(", "))
-        })
-    })
+                // "this" still works!
+                this.names = firstNames
+            })
+        }
+    }
 
 
 Generics
@@ -251,7 +263,7 @@ interface Todo {
 Angular Controller
 ------------------
 
-convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
+Start with [`todoCtrl.js`][todoCtrl.js] 
 
     // todoCtrl.js
     todomvc.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, todoStorage, filterFilter) {
@@ -259,7 +271,7 @@ convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
         ...
     })
 
-Add some interfaces for the scope and params
+[`todoCtrl.ts`][todoCtrl.ts]: Add some interfaces for the scope and params
 
     interface TodoCtrlScope extends ng.IScope {
         todos:Todo[];
@@ -291,6 +303,8 @@ Add types to the signature
         var todos = $scope.todos = todoStorage.get();
         ...
     })
+
+To use classes use [view model method](TODO)
 
 Angular Service
 ---------------
@@ -380,8 +394,13 @@ Using ES6 Modules
 Demo a Refactor? Or some other cool change
 ------------------------------------------
 
-+ show it in action. need a good example.
-+ live code baby!!!
+- live code: Typescript will save us!
+
+Other cool things you could try:
+--------------------------------
+
+- Rich models with classes
+- 
 
 What about Dart? Coffeescript?
 ------------------------------
@@ -418,5 +437,5 @@ Concat Me: [@seanhess][@seanhess]
 
 TODO: paste code into presentation
 TODO: refactoring/full example
-
+TODO: paste in images of IDEs
 
