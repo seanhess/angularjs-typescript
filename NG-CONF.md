@@ -9,7 +9,6 @@ Concrete example (5 minutes): see syntax at work. you are convinced
 INTRO: much shorter! Just reduce to one slide
 
 
-
 Follow Along:
 -------------
 
@@ -23,6 +22,7 @@ Sean Hess
 - [@seanhess](http://twitter.com/seanhess)
 - [seanhess.github.io](http://seanhess.github.io)
 - [github.com/seanhess](http://github.com/seanhess/)
+
 
 
 WHY TYPESCRIPT?
@@ -297,9 +297,16 @@ Demo a Refactor? Or some other cool change
 + show it in action. need a good example.
 - show an example where you wouldn't catch the error. In an inner block
 
+
+What about Dart? Coffeescript?
+------------------------------
+
+
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
 [angular]: http://angularjs.org/
+
+
 
 
 TODO
@@ -313,3 +320,4 @@ TODO
 - typescript + angular = MVCTODO
 
 - link: example of using the "vm" method for controllers
+

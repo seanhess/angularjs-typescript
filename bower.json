@@ -14,7 +14,9 @@
     "tests"
   ],
   "dependencies": {
+    "todomvc-common": "~0.1.4",
     "jquery": "~2.0.3",
-    "angular": "~1.0.8"
+    "angular": "1.2.8",
+    "angular-route": "1.2.8"
   }
 }

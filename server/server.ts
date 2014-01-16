@@ -1,8 +1,7 @@
-/// <reference path='../sharedTypes.ts' />
-/// <reference path='../types/node/node.d.ts' />
-/// <reference path='../types/express/express.d.ts' />
+/// <reference path='./types/node/node.d.ts' />
+/// <reference path='./types/express/express.d.ts' />
 
-var PORT = process.env.PORT || 3000
+var PORT = process.env.PORT || 4000
 import express = require('express')
 import http = require('http')
 var path = require('path') 
