@@ -1,7 +1,13 @@
+interface TodoStorage {
+    get():Todo[];
+    put(todos:Todo[]):void;
+}
+
+
 /**
  * Services that persists and retrieves TODOs from localStorage
  */
-todomvc.factory('todoStorage', function () {
+todomvc.factory('todoStorage', function():TodoStorage {
         var STORAGE_ID = 'todos-angularjs';
 
         return {

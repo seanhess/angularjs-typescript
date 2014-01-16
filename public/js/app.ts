@@ -1,7 +1,7 @@
 /// <reference path="types.ts"/>
 
 var todomvc = angular.module('todomvc', ['ngRoute'])
-        .config(function ($routeProvider) {
+        .config(function ($routeProvider:ng.route.IRouteProvider) {
                 $routeProvider.when('/', {
                         controller: 'TodoCtrl',
                         templateUrl: 'todomvc-index.html'
