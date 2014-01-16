@@ -248,7 +248,7 @@ Angular Controller
 
 - add types to dependencies
 - add a scope interface
-- convert [`todoCtrl.js`][todoCtrl.ts] to [`todoCtrl.ts`][todoCtrl.ts]
+- convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
 
 Angular Service
 ---------------
@@ -267,8 +267,8 @@ Add a build step
 No way to type views :(
 -----------------------
 
-    <!-- if you misspell this you won't get an error :( -->
-    <label>{{todo.title}}</label>
+    <!-- should be .title, but no error -->
+    <label>{{todo.text}}</label>
 
 Using ES6 Modules
 -----------------
@@ -294,7 +294,8 @@ What about Dart? Coffeescript?
 It's over!
 ==========
 
-Online: [github.com/seanhess/angularjs-typescript][angularjs-typescript]
+[github.com/seanhess/angularjs-typescript][angularjs-typescript]
+
 Concat Me: [@seanhess][@seanhess]
 
 [dt]: https://github.com/borisyankov/DefinitelyTyped
@@ -309,6 +310,8 @@ Concat Me: [@seanhess][@seanhess]
 
 [todoCtrl.js]: http://github.com/seanhess/angularjs-typescript/blob/js/public/js/controllers/todoCtrl.js
 [todoCtrl.ts]: public/js/controllers/todoCtrl.ts
+
+[Gruntfile.js]: Gruntfile.js
 
 [angularjs-typescript]: http://github.com/seanhess/angularjs-typescript
 [@seanhess]: http://twitter.com/seanhess
