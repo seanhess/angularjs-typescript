@@ -237,14 +237,16 @@ Add Definition Files
 - Add [`angular.d.ts`][angular.d.ts] and [`jquery.d.ts`][jquery.d.ts] to a types folder
 - Add links to [`types.ts`][types.ts]
 
-    /// <reference path="./types/jquery/jquery.d.ts"/>
-    /// <reference path="./types/angularjs/angular.d.ts"/>
-    /// <reference path="./types/angularjs/angular-route.d.ts"/>
+```
+/// <reference path="./types/jquery/jquery.d.ts"/>
+/// <reference path="./types/angularjs/angular.d.ts"/>
+/// <reference path="./types/angularjs/angular-route.d.ts"/>
 
-    interface Todo {
-        completed: boolean;
-        title: string;
-    }
+interface Todo {
+    completed: boolean;
+    title: string;
+}
+```
 
 Add Constraints Incrementally
 -----------------------------
@@ -257,10 +259,9 @@ Add Constraints Incrementally
 Angular Controller
 ------------------
 
-- convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
+convert [`todoCtrl.js`][todoCtrl.js] to [`todoCtrl.ts`][todoCtrl.ts]
 
-todoCtrl.js
-
+    // todoCtrl.js
     todomvc.controller('TodoCtrl', function TodoCtrl($scope, $routeParams, todoStorage, filterFilter) {
         var todos = $scope.todos = todoStorage.get();
         ...
