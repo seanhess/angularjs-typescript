@@ -101,7 +101,7 @@ Type Inference
 
 The compiler can read your mind
 
-<img src="public/img/telepathy.jpg" style="height: 200px;"/>
+<img src="public/img/telepathy.jpg" style="width: 200px; height: 200px"/>
 
     // name is a string
     var name = fullName(user)
