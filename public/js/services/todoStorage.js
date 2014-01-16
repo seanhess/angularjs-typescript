@@ -1,19 +1,19 @@
+/*global todomvc */
+'use strict';
+
 /**
-* Services that persists and retrieves TODOs from localStorage
-*/
-var TodoStorage = (function () {
-    // dependencies would be injected here
-    function TodoStorage() {
-    }
-    TodoStorage.prototype.get = function () {
-        return JSON.parse(localStorage.getItem(TodoStorage.STORAGE_ID) || '[]');
-    };
+ * Services that persists and retrieves TODOs from localStorage
+ */
+todomvc.factory('todoStorage', function () {
+	var STORAGE_ID = 'todos-angularjs';
 
-    TodoStorage.prototype.put = function (todos) {
-        localStorage.setItem(TodoStorage.STORAGE_ID, JSON.stringify(todos));
-    };
-    TodoStorage.STORAGE_ID = 'todos-angularjs';
-    return TodoStorage;
-})();
+	return {
+		get: function () {
+			return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+		},
 
-todomvc.service('todoStorage', TodoStorage);
+		put: function (todos) {
+			localStorage.setItem(STORAGE_ID, JSON.stringify(todos));
+		}
+	};
+});
