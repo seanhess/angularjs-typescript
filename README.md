@@ -29,12 +29,14 @@ Typescript: best of both worlds
 --------------------------------
 
 - 80% of the benefit of testing, 20% of the cost
-- see mistakes inline
-- formalize your choices
+- enforce your choices
 - modern features make it easy: optional, inferred
-- autocomplete
+
+see mistakes inline
 
 ![Editor Errors](public/img/editor-errors.png)
+
+autocomplete
 
 ![Editor Autocomplete](public/img/editor-complete.png)
 
