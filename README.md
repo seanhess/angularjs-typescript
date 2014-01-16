@@ -81,7 +81,7 @@ Interfaces
 
 It's the LAW: outlaw cowboy coding...
 
-![Cowboy](public/img/cowboy-coder.jpg)
+![Cowboy](public/img/cowboy-coder.png)
 
     interface User {
         firstName: string;
@@ -101,7 +101,7 @@ Type Inference
 
 The compiler can read your mind
 
-![Telepathy](public/img/telepathy.jpg)
+<img src="public/img/telepathy.jpg" style="height: 200px;"/>
 
     // name is a string
     var name = fullName(user)
