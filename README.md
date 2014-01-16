@@ -4,14 +4,14 @@ AngularJS + Typescript ♥♥
 Follow Along:
 -------------
 
-[github.com/seanhess/angularjs-typescript](http://github.com/seanhess/angularjs-typescript)
+[github.com/seanhess/angularjs-typescript][angularjs-typescript]
 
 About Me
 --------
 
 Sean Hess
 
-- Twitter: [@seanhess](http://twitter.com/seanhess)
+- Twitter: [@seanhess][@seanhess]
 - Blog: [seanhess.github.io](http://seanhess.github.io)
 - Github: [github.com/seanhess](http://github.com/seanhess/)
 
@@ -243,49 +243,59 @@ Add Constraints Incrementally
 - when they make sense
 - as you formalize things
 
+Angular Controller
+------------------
+
+- add types to dependencies
+- add a scope interface
+- convert [`todoCtrl.js`][todoCtrl.ts] to [`todoCtrl.ts`][todoCtrl.ts]
+
 Angular Service
 ---------------
 
 - formalize your API
 - use a class to convert [`todoStorage.js`][todoStorage.js] to [`todoStorage.ts`][todoStorage.ts]
-
-Angular Controller
-------------------
-
-- example
-- $http:ng.IHttpService
-- add a scope interface if you want
+- for classes use `.service()` instead of `.factory()`
 
 Add a build step
 ----------------
 
-- grunt demo
+- add compile command to grunt, watchers
+- see [`Gruntfile.js`][Gruntfile.js]
+- don't type your Gruntfile. 
 
 No way to type views :(
 -----------------------
 
-<!-- will not throw an error -->
-<div>{{currentUser.firstNaem}}</div>
+    <!-- if you misspell this you won't get an error :( -->
+    <label>{{todo.title}}</label>
 
-Ignore ES6 Modules, Probably
-----------------------------
+Using ES6 Modules
+-----------------
 
-- turn .ts files into .js files
-- include them normally
-- If already using browserify or AMD then go ahead and use them. 
-
-- show internal modules?
+- simplest: just include all the generated .js files
+- add a build script: `grunt concat`
+- to namespace, use internal modules
+- with browserify or AMD: use external modules
 
 Demo a Refactor? Or some other cool change
 ------------------------------------------
 
 + show it in action. need a good example.
-- show an example where you wouldn't catch the error. In an inner block
-
++ live code baby!!!
 
 What about Dart? Coffeescript?
 ------------------------------
 
+- can only use one transpiler
+- was worth giving up [Coffeescript](http://coffeescript.org/)
+- Dart has a cool type system, but it is all-in. Poor code reuse. 
+
+It's over!
+==========
+
+Online: [github.com/seanhess/angularjs-typescript][angularjs-typescript]
+Concat Me: [@seanhess][@seanhess]
 
 [dt]: https://github.com/borisyankov/DefinitelyTyped
 [typescript]: http://www.typescriptlang.org/
@@ -293,16 +303,13 @@ What about Dart? Coffeescript?
 [types.ts]: public/js/types.ts
 [angular.d.ts]: public/js/types/angularjs/angular.d.ts
 [jquery.d.ts]: public/js/types/jquery/jquery.d.ts
+
 [todoStorage.js]: http://github.com/seanhess/angularjs-typescript/blob/js/public/js/services/todoStorage.js
 [todoStorage.ts]: public/js/services/todoStorage.ts
 
-TODO
+[todoCtrl.js]: http://github.com/seanhess/angularjs-typescript/blob/js/public/js/controllers/todoCtrl.js
+[todoCtrl.ts]: public/js/controllers/todoCtrl.ts
 
-- I need a good sample application. A blogging engine? Uses some awesome back end
-    - messaging: just an anonymous message board
-
-- Other links: https://github.com/tastejs/todomvc/tree/gh-pages/labs/architecture-examples/typescript-angular
-- typescript + angular = MVCTODO
-
-- link: example of using the "vm" method for controllers
+[angularjs-typescript]: http://github.com/seanhess/angularjs-typescript
+[@seanhess]: http://twitter.com/seanhess
 
