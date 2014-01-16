@@ -342,12 +342,26 @@ todomvc.service('todoStorage', TodoStorage)
 
 Lets you formalize an API
 
+Alternatively, you could use a normal factory function + an interface
+
 Add a build step
 ----------------
 
-- add compile command to grunt, watchers
-- see [`Gruntfile.js`][Gruntfile.js]
-- don't type your Gruntfile. 
+add compile command to your [Gruntfile.js][Gruntfile.js]. Don't type it.
+
+    exec: {
+        tsPublic: { cmd: 'node_modules/.bin/tsc public/js/app.ts public/js/**/*.ts'},
+    }
+
+    watch: {
+        public: {
+            files: ["public/**/*.ts"],
+            tasks: ["exec:tsPublic"],
+            options: { livereload: true },
+        },
+    }
+
+    grunt.registerTask('default', ['exec:tsPublic', 'watch'])
 
 No way to type views :(
 -----------------------

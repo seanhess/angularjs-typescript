@@ -15,12 +15,12 @@
     "underscore": "~1.5.2",
     "connect": "~2.9.0",
     "grunt-angular-templates": "~0.4.2",
-    "rethinkdb": "~1.10.0-0"
+    "rethinkdb": "~1.10.0-0",
+    "typescript": "~0.9.5"
   },
   "readmeFilename": "README.md",
   "devDependencies": {
     "less": "~1.4.2",
-    "typescript": "~0.9.1-1",
     "grunt": "~0.4.1",
     "browserify": "~2.33.1",
     "grunt-browserify": "~1.2.8",
@@ -32,7 +32,6 @@
     "grunt-concurrent": "~0.4.0",
     "grunt-develop": "~0.2.2",
     "bower": "~1.2.7",
-    "typescript-tpm": "~0.1.5",
     "grunt-inline-angular-templates": "~0.1.3",
     "grunt-contrib-clean": "~0.5.0",
     "mocha": "~1.13.0"
