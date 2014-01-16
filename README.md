@@ -248,14 +248,6 @@ interface Todo {
 }
 ```
 
-Add Constraints Incrementally
------------------------------
-
-- when they make sense
-- as you formalize things
-
-+ TODO: Need Example
-
 Angular Controller
 ------------------
 
@@ -287,7 +279,6 @@ Add some interfaces for the scope and params
         removeTodo(todo:Todo);
         clearCompletedTodos(todo);
         markAll(completed:boolean);
-
     }
 
     interface TodoCtrlRouteParams {
@@ -304,9 +295,50 @@ Add types to the signature
 Angular Service
 ---------------
 
-- formalize your API
 - use a class to convert [`todoStorage.js`][todoStorage.js] to [`todoStorage.ts`][todoStorage.ts]
-- for classes use `.service()` instead of `.factory()`
+
+```
+todomvc.factory('todoStorage', function () {
+    var STORAGE_ID = 'todos-angularjs';
+
+    return {
+        get: function () {
+            return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
+        },
+
+        put: function (todos) {
+            localStorage.setItem(STORAGE_ID, JSON.stringify(todos));
+        }
+    };
+});
+```
+
+```
+class TodoStorage {
+    static STORAGE_ID = 'todos-angularjs';
+
+    // dependencies would be injected here
+    constructor() {
+
+    }
+
+    get():Todo[] {
+        return JSON.parse(localStorage.getItem(TodoStorage.STORAGE_ID) || '[]');
+    }
+
+    put(todos:Todo[]) {
+        localStorage.setItem(TodoStorage.STORAGE_ID, JSON.stringify(todos));
+    }
+}
+```
+
+for classes use `.service()` instead of `.factory()`
+
+```
+todomvc.service('todoStorage', TodoStorage)
+```
+
+Lets you formalize an API
 
 Add a build step
 ----------------
