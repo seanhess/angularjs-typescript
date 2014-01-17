@@ -32,7 +32,7 @@ Story of a Javascript App
 Typescript: be happy
 --------------------
 
-- like waking up on Christmas with well written tests
+- like waking up on Christmas with well-written, fast tests
 - formalize your choices as you go
 - modern features make it easy: optional, inferred
 
@@ -121,7 +121,7 @@ The compiler can read your mind
 Generics
 --------
 
-The same function works on different types
+Code for what things have in common
 
     function firstValue<T>(array:T[]):T {
         return array[0]
@@ -413,7 +413,7 @@ Live Code: Refactoring a Service
 What about Dart? Coffeescript?
 ------------------------------
 
-- can only use one transpiler
+- There can be only one
 - was worth giving up [Coffeescript](http://coffeescript.org/)
 - Dart has a cool type system, but it is all-in.
 
