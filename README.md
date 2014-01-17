@@ -11,6 +11,8 @@ About Me
 
 Sean Hess
 
+Code and Startups
+
 - Twitter: [@seanhess][@seanhess]
 - Blog: [seanhess.github.io](http://seanhess.github.io)
 - Github: [github.com/seanhess](http://github.com/seanhess/)
@@ -20,16 +22,18 @@ Sean Hess
 WHY TYPESCRIPT?
 ==================================
 
-Story of a Javascript team
---------------------------
+Story of a Javascript App
+-------------------------
 
-Big JS application? What could go wrong?
+- started fast with JS
+- house of cards
+- testing was hard
 
-Typescript: best of both worlds
---------------------------------
+Typescript: be happy
+--------------------
 
-- 80% of the benefit of testing, 20% of the cost
-- enforce your choices
+- like waking up on Christmas with well written tests
+- formalize your choices as you go
 - modern features make it easy: optional, inferred
 
 see mistakes right away, in context
@@ -44,7 +48,7 @@ WHAT IS TYPESCRIPT?
 ==================
 
 - basically compiles ES6 to JavaScript
-- committed to keep in sync with ES6
+- plus a modern type system
 
 Getting Started
 ---------------
