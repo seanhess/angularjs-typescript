@@ -32,7 +32,7 @@ Typescript: best of both worlds
 - enforce your choices
 - modern features make it easy: optional, inferred
 
-see mistakes inline
+see mistakes right away, in context
 
 ![Editor Errors](public/img/editor-errors.png)
 
@@ -403,7 +403,7 @@ Using ES6 Modules
 Live Code: Refactoring a Service
 --------------------------------
 
-- Let's use promises. What could go wrong?
+- Let's add promises! What could go wrong?
 - Typescript will save us!
 
 What about Dart? Coffeescript?
@@ -411,7 +411,7 @@ What about Dart? Coffeescript?
 
 - can only use one transpiler
 - was worth giving up [Coffeescript](http://coffeescript.org/)
-- Dart has a cool type system, but it is all-in. Poor code reuse. 
+- Dart has a cool type system, but it is all-in.
 
 Other cool things you could try:
 --------------------------------

@@ -15,7 +15,6 @@
     "underscore": "~1.5.2",
     "connect": "~2.9.0",
     "grunt-angular-templates": "~0.4.2",
-    "rethinkdb": "~1.10.0-0",
     "typescript": "~0.9.5"
   },
   "readmeFilename": "README.md",
