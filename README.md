@@ -6,6 +6,8 @@ Follow Along:
 
 [github.com/seanhess/angularjs-typescript][angularjs-typescript]
 
+[video from ng-conf 2014](https://www.youtube.com/watch?v=u6TeBM_SC8w)
+
 About Me
 --------
 
